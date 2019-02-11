@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8E3354AA-43CB-455C-B616-24143E573822}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>Taschenrechner.Module1</StartupObject>
+    <StartupObject>Taschenrechner.Program</StartupObject>
     <RootNamespace>Taschenrechner</RootNamespace>
     <AssemblyName>Taschenrechner</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -69,7 +69,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Module1.vb" />
+    <Compile Include="Program.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
