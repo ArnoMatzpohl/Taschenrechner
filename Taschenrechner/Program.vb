@@ -5,9 +5,7 @@
         Console.WriteLine("Willkommen beim Taschenrechner.")
         Console.WriteLine("Bestätige die Schritte mit Enter")
 
-
         Console.WriteLine("")
-
 a:
 
         Dim Zahl1 As Integer
@@ -65,14 +63,22 @@ a:
         End Select
 
         Console.WriteLine("")
-        Console.WriteLine("")
 
-        Console.WriteLine("Weiter rechnen = Enter
-Beenden = rotes x oben rechts")
+        Console.WriteLine("Weiter oder Beenden?")
+        Dim Antwort = Console.ReadLine
 
-        GoTo a
+        Select Case Antwort
+            Case "Weiter", "weiter", "WEITER"
+                GoTo a
 
-        Console.ReadLine()
+        End Select
+
+
+
+
+
+
+
     End Sub
 
 End Module
