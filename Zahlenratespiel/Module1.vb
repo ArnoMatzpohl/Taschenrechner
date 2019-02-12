@@ -17,7 +17,7 @@
 
 a:
         Zähler = Zähler + 1
-        'Console.WriteLine(Zahl)
+
         Geraten = Console.ReadLine
 
         Select Case Zahl
@@ -27,6 +27,7 @@ a:
                 Console.WriteLine("größer")
             Case = Geraten
                 Console.WriteLine("!!!WIN!!!")
+                Console.WriteLine("")
                 Console.WriteLine("Du hast" & Zähler & "Runden gebraucht")
 
         End Select
