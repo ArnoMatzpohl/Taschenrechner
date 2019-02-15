@@ -1,14 +1,120 @@
-﻿Module Module1
+﻿Module Hangman
 
-    Sub Main() ''Hauptprogram
+    Sub Main() ''Hauptprogrm
+
+        Dim Zeile As String
+        Dim AlleWörter As String
+        Dim Wörter As List(Of String)
+        Dim i As Integer
+
+        AlleWörter = FileIO.FileSystem.ReadAllText("Wortliste.txt")
+        Wörter = AlleWörter.Split({vbCrLf}, StringSplitOptions.RemoveEmptyEntries).ToList
+
+        Console.WriteLine(Wörter(1))
+
+        For i = 0 To Wörter.Count - 1
+            Console.WriteLine(Wörter(i))
+        Next
+
+        Console.WriteLine("Die Wortliste enthält: " & Wörter.Count)
+
+        Console.ReadLine()
+
+        'Dim Zählschleife As Integer
+
+
+
+        'For Zählschleife = 30 To 32000 Step 100
+        '    Console.Beep()
+
+        'Next
+
+
+        'Dim Zählschleife As Integer
+        'Dim Schleife As String
+
+
+        'For Zählschleife = 40 To 45 Step 100
+        '    Console.Beep() '(Zählschleife, 10)
+
+        'Next
+
+
+
+
+
+
+        'Dim Gurke As String
+        'Dim Wurst As String
+        'Dim Baum As String
+        'Dim JaNein As Boolean
+
+        'Gurke = "GURKE"
+        'Wurst = "gurke"
+        'Wurst = Gurke.ToLower
+        'JaNein = Gurke.Equals(Wurst, StringComparison.InvariantCultureIgnoreCase)
+        'Console.WriteLine(JaNein)
+
+        'Wurst = "Diese Wurst ist lecker"
+        'Gurke = "Diese Gurke ist grün"
+        'JaNein = Gurke.Contains("A") 'c
+
+        'JaNein = Wurst.Contains(Gurke(0))
+        'JaNein = Gurke.Contains(Wurst(3))
+        'JaNein = Wurst.Length > Gurke.Length
+        'JaNein = Wurst.ToLower = Gurke.ToLower
+        'JaNein = Wurst.ToUpper = Gurke.ToUpper
+        'JaNein = Gurke.Length > Wurst.Length - 3
+        'JaNein = Gurke.Length > 7
+        'JaNein = Gurke.Trim.Length > 7
+        'Baum = Gurke(7)
+        'JaNein = Baum(0) = "B"
+        'Baum = Gurke
+        'JaNein = Baum.Contains(Gurke)
+        'JaNein = (Baum > Gurke)
+        'JaNein = (Baum = Gurke)
+        'JaNein = Baum.Equals(Gurke, StringComparison.InvariantCultureIgnoreCase)
+
+
+a:
+        Console.Clear()
+        Dim Zählschleife As Integer
+        Dim Schleife As String
+
 
         Dim currentDate = DateTime.Now
         Console.Title = "Hangman 1"
         Console.WriteLine("Datum/Uhrzeit: " & currentDate)
         Console.WriteLine("")
         Console.WriteLine("Dieses Spiel ist FSK18!")
+        For Zählschleife = 40 To 41 Step 1
+            Console.Beep() '(Zählschleife, 10)
+
+        Next
+        Console.WriteLine("")
+        Console.WriteLine("--------------")
+        Console.WriteLine("Gebe dein Passwort ein damit Ich weiß dass du 18 jahre alt bist:")
+        Console.WriteLine("")
+        Dim OK As String = Console.ReadLine()
+        Dim OKif As String
+
+        Select Case OK
+            Case "Bistro Öz Tadim"
+                Console.Beep()
+                GoTo R
+                'Case Else
+                '    GoTo a
+        End Select
+        GoTo a
+
+
+
+
+R:
 
         Console.Clear()
+
+
 
         Dim currentDate1 = DateTime.Now
         Console.WriteLine("Datum/Uhrzeit: " & currentDate1)
@@ -39,7 +145,10 @@
         Console.WriteLine("")
 
         Console.WriteLine("Hallo " & Name & ", willkommen zurrück!")
+        For Zählschleife = 40 To 41 Step 1
+            Console.Beep() '(Zählschleife, 10)
 
+        Next
         Console.WriteLine("")
         Console.WriteLine("-------------------")
         Console.WriteLine("")
@@ -90,7 +199,14 @@
 
 
 
-            If WortEnthältBuchstabe(EingegebenerText, BuchstabeGeraten) Then 'Das Wort enthält den geratenden Buchstaben dann:
+            Dim EnthältBuchstabe1 As Boolean
+
+            EnthältBuchstabe1 = EingegebenerText.Contains(BuchstabeGeraten)
+
+
+
+
+            If EnthältBuchstabe1 = True Then 'Das Wort enthält den geratenden Buchstaben dann:
                 RichtigGeratendeBuchstaben = RichtigGeratendeBuchstaben & BuchstabeGeraten 'Der Wert von RichtigGeratendeBuchstaben & BuchstabeGeraten Wird RichtigGeratendeBuchstaben zugewiesen
                 Console.WriteLine(RichtigGeratendeBuchstaben) 'In die Konsole wird das was In RichtigGeratendeBuchstaben steht geschrieben
                 For R As Integer = 0 To EingegebenerText.Length - 1 'Die schleife geht von 0 bis zu der Länge vom eingegebenen Text -1
@@ -205,14 +321,14 @@
         'GoTo b
 
 
-a:
+z:
 
         Console.WriteLine("Gib deine Fehlversuche an...")
         Dim Zahl As Integer
         Zahl = Console.ReadLine
         HangmanZeichnen(Zahl) ' zeichnet Hangman
 
-        GoTo a
+        GoTo z
 
     End Sub
 

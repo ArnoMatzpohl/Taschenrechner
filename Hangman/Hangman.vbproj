@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{16751BDC-A3F2-4281-B6B7-7C396115411D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>Hangman.Module1</StartupObject>
+    <StartupObject>Hangman.Hangman</StartupObject>
     <RootNamespace>Hangman</RootNamespace>
     <AssemblyName>Hangman</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -47,6 +47,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>David-Renelt-Little-Icon-People-Hangman.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -69,7 +72,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Module1.vb" />
+    <Compile Include="Hangman.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -105,6 +108,13 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dapino-Summer-Holiday-Palm-tree.ico" />
+    <Content Include="David-Renelt-Little-Icon-People-Hangman.ico" />
+    <Content Include="Wortliste.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
