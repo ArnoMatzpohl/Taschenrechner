@@ -2,23 +2,26 @@
 
     Sub Main() ''Hauptprogrm
 
-        Dim Zeile As String
-        Dim AlleWörter As String
-        Dim Wörter As List(Of String)
-        Dim i As Integer
 
-        AlleWörter = FileIO.FileSystem.ReadAllText("Wortliste.txt")
-        Wörter = AlleWörter.Split({vbCrLf}, StringSplitOptions.RemoveEmptyEntries).ToList
 
-        Console.WriteLine(Wörter(1))
 
-        For i = 0 To Wörter.Count - 1
-            Console.WriteLine(Wörter(i))
-        Next
+        'Dim Zahln As List(Of Integer)
+        'Dim AlleWörter As String
+        'Dim Wörter As List(Of String)
+        'Dim i As Integer
 
-        Console.WriteLine("Die Wortliste enthält: " & Wörter.Count)
+        'AlleWörter = FileIO.FileSystem.ReadAllText("Wortliste.txt")
+        'Wörter = AlleWörter.Split({vbCrLf}, StringSplitOptions.RemoveEmptyEntries).ToList
 
-        Console.ReadLine()
+        'Console.WriteLine(Wörter(1))
+
+        'For i = 0 To Wörter.Count - 1
+        '    Console.WriteLine(Wörter(i))
+        'Next
+
+        'Console.WriteLine("Die Wortliste enthält: " & Wörter.Count)
+
+        'Console.ReadLine()
 
         'Dim Zählschleife As Integer
 
@@ -91,15 +94,14 @@ a:
             Console.Beep() '(Zählschleife, 10)
 
         Next
-        Console.WriteLine("")
         Console.WriteLine("--------------")
-        Console.WriteLine("Gebe dein Passwort ein damit Ich weiß dass du 18 jahre alt bist:")
+        Console.WriteLine("Gebe dein Passwort ein:")
         Console.WriteLine("")
         Dim OK As String = Console.ReadLine()
         Dim OKif As String
 
         Select Case OK
-            Case "Bistro Öz Tadim"
+            Case "Bistro Öz Tadim", "Arno", "a"
                 Console.Beep()
                 GoTo R
                 'Case Else
@@ -107,21 +109,24 @@ a:
         End Select
         GoTo a
 
-
-
-
 R:
 
         Console.Clear()
-
-
 
         Dim currentDate1 = DateTime.Now
         Console.WriteLine("Datum/Uhrzeit: " & currentDate1)
         Console.WriteLine("")
         Console.WriteLine("Wie alt bist du?")
         Dim Alter As Integer = Console.ReadLine
+        Dim FSK18 As Integer = 18
 
+        If Alter > FSK18 Then
+            GoTo c
+        ElseIf Alter < FSK18 Then
+            GoTo a
+        End If
+
+c:
         Console.Clear()
 
         Dim currentDate2 = DateTime.Now
@@ -173,50 +178,43 @@ R:
         Dim B As String 'Dei Variable "B" wird definiert und hat den Dtatentyp String
         B = EingegebenerText(0) ' B enthält das  erste Zeichen von EingegebenerText
 
-
-
         'Console.WriteLine(WortEnthältBuchstabe("Welt", "F"))
 
         Dim RichtigGeratendeBuchstaben As String 'Dei Variable "RichtigGeratendeBuchstaben" wird Definirt und hat den Datantyp String
 
-        RichtigGeratendeBuchstaben = "" '
+
+
+        RichtigGeratendeBuchstaben = ""
 
         Dim Fehlversuche As Integer 'Dei Variable "Fehlversuche" wird Definirt und hat den Datantyp String
 
         Dim RichtigGeratendeBuchstabenAnzahl As Integer 'Dei Variable "RichtigGeratendeBuchstabenAnzahl" wird Definirt und hat den Datantyp String
 
-
-
-
         For T As Integer = 1 To 26 ' Dei Schleife "T" Geht von 1 bis 26
             RichtigGeratendeBuchstabenAnzahl = 0 'RichtigGeratendeBuchstabenAnzahl enthählt 0
             Console.Clear() 'Die Konsole wird gelöscht
             HangmanZeichnen(Fehlversuche) 'Es wird die Funktion Hangman Zeichnen aufgerufen und ihr wird Fehlversuche übergeben
+            Dim Franz As String = Kleinbuchstaben1(EingegebenerText)
+            Dim Heidi As String = Kleinbuchstaben2(RichtigGeratendeBuchstaben)
+            zeichneBisherGerateneBuchstaben(Franz, Heidi)
             Console.WriteLine("Gebe einen Buchstaben ein...") 'Es wird in die Konsole geschrieben: "Gebe einen Buchstaben ein..."
             Dim BuchstabeGeraten As String = Console.ReadLine 'Die Variable BuchstabeGeraten wird Definiert, hat den Datentypen String und übernimmt den Wert von Console.Readline
-            Console.WriteLine(WortEnthältBuchstabe(EingegebenerText, BuchstabeGeraten)) 'Es wird überprüft ob der eingegebene Buchstabe in dem Eingegebenen test Enthalten ist.
+            'Console.WriteLine(WortEnthältBuchstabe(EingegebenerText, BuchstabeGeraten)) 'Es wird überprüft ob der eingegebene Buchstabe in dem Eingegebenen test Enthalten ist.
 
-
-
-
+            'Console.ReadLine()
             Dim EnthältBuchstabe1 As Boolean
 
-            EnthältBuchstabe1 = EingegebenerText.Contains(BuchstabeGeraten)
-
-
-
+            EnthältBuchstabe1 = EingegebenerText.ToLower.Contains(BuchstabeGeraten.ToLower)
 
             If EnthältBuchstabe1 = True Then 'Das Wort enthält den geratenden Buchstaben dann:
                 RichtigGeratendeBuchstaben = RichtigGeratendeBuchstaben & BuchstabeGeraten 'Der Wert von RichtigGeratendeBuchstaben & BuchstabeGeraten Wird RichtigGeratendeBuchstaben zugewiesen
-                Console.WriteLine(RichtigGeratendeBuchstaben) 'In die Konsole wird das was In RichtigGeratendeBuchstaben steht geschrieben
+                'Console.WriteLine(RichtigGeratendeBuchstaben) 'In die Konsole wird das was In RichtigGeratendeBuchstaben steht geschrieben
                 For R As Integer = 0 To EingegebenerText.Length - 1 'Die schleife geht von 0 bis zu der Länge vom eingegebenen Text -1
-
-
 
                     Dim EnthältBuchstabe As Boolean
 
-                    EnthältBuchstabe = WortEnthältBuchstabe(RichtigGeratendeBuchstaben, EingegebenerText(R))
-                    EnthältBuchstabe = RichtigGeratendeBuchstaben.Contains(EingegebenerText(R))
+                    '  EnthältBuchstabe = WortEnthältBuchstabe(RichtigGeratendeBuchstaben, EingegebenerText(R))
+                    EnthältBuchstabe = RichtigGeratendeBuchstaben.ToLower.Contains(EingegebenerText.ToLower()(R))
 
                     If EnthältBuchstabe = True Then
                         RichtigGeratendeBuchstabenAnzahl += 1 'zu RichtigGeratendeBuchstabenAnzahl wird einer dazu gezählt 
@@ -230,7 +228,7 @@ R:
                 Next
 
                 If RichtigGeratendeBuchstabenAnzahl = EingegebenerText.Length Then
-                    Console.WriteLine("Herzlichen Glückwunsch! Das Wort ist: " & EingegebenerText) 'In die Konsole wird geschrieben: "Herzlichen Glückwunsch! Das Wort ist: " & EingegebenerText
+                    Console.WriteLine("Herzlichen Glückwunsch" & Name & "! Das Wort ist: " & EingegebenerText) 'In die Konsole wird geschrieben: "Herzlichen Glückwunsch! Das Wort ist: " & EingegebenerText
                     Console.ReadLine()
                 End If
             Else 'Das Wort enthält nicht den Buchstaben
@@ -240,10 +238,7 @@ R:
         Next
 
 
-
-
         'Console.WriteLine(EingegebenerText("Welt", EingegebenerText))
-
 
         Console.ReadLine()
 
@@ -264,16 +259,7 @@ R:
 
         Console.WriteLine(Wortlänge)
 
-
-
-
-
         Console.ReadLine()
-
-
-
-
-
 
         Dim EingegebeneBuchstaben As String = ""
 
@@ -321,17 +307,16 @@ R:
         'GoTo b
 
 
-z:
 
-        Console.WriteLine("Gib deine Fehlversuche an...")
-        Dim Zahl As Integer
-        Zahl = Console.ReadLine
-        HangmanZeichnen(Zahl) ' zeichnet Hangman
 
-        GoTo z
+        'Console.WriteLine("Gib deine Fehlversuche an...")
+        'Dim Zahl As Integer
+        'Zahl = Console.ReadLine
+        'HangmanZeichnen(Zahl) ' zeichnet Hangman
+
+
 
     End Sub
-
 
     Function WortEnthältBuchstabe(Wort As String, Buchstabe As String) As Boolean
 
@@ -339,12 +324,9 @@ z:
 
     End Function
 
-
-
-
-
-
-
+    Sub AnzeigeGeratenerBuchstaben(EingegebenerText, RichtigGeratendeBuchstaben)
+        Console.WriteLine(RichtigGeratendeBuchstaben)
+    End Sub
 
     Function GeratenderBuchstabe() As String
         Console.WriteLine("Gebe einen buchstaben ein...")
@@ -352,31 +334,52 @@ z:
         Return EigegebenerBuchstabe
     End Function
 
+    Function Kleinbuchstaben1(EingegebenerText As String) As String
+        Return EingegebenerText.ToLower
+    End Function
 
+    Function Kleinbuchstaben2(RichtigGeratendeBuchstaben As String) As String
+        Return RichtigGeratendeBuchstaben.ToLower
+    End Function
 
-    Sub HangmanZeichnen(Fehlversuche As Integer)
+    Sub zeichneBisherGerateneBuchstaben(Wort As String, richtigeBuchstaben As String)
+
+        For Zähler As Integer = 0 To Wort.Length - 1
+
+            If richtigeBuchstaben.Contains(Wort(Zähler)) Then
+                Console.Write(Wort(Zähler) & " ")
+
+            Else
+                Console.Write("_ ")
+            End If
+
+        Next
+        Console.WriteLine()
+    End Sub
+
+    Sub HangmanZeichnen(Fehlversuche As Integer) 'Diese Funktion ist Fertig!!!
         Console.Clear()
 
         Select Case Fehlversuche 'was ist in Fehlversuchen drinne
 
-            Case 0 'Fehversuch = 0 dann den Galgen malen
+            Case 0 'Fehversuch = 0 dann den Galgen malen       
+                Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("                               ")
-                Console.WriteLine("       ___________             ")
-                Console.WriteLine("      | /         |            ")
-                Console.WriteLine("      |/          |            ")
-                Console.WriteLine("      |                        ")
-                Console.WriteLine("      |                        ")
-                Console.WriteLine("      |                        ")
-                Console.WriteLine("      |                        ")
-                Console.WriteLine("      |                        ")
-                Console.WriteLine(" _____|_____                   ")
+                Console.WriteLine("                               ")
+                Console.WriteLine("                               ")
+                Console.WriteLine("                               ")
+                Console.WriteLine("                               ")
+                Console.WriteLine("                               ")
+                Console.WriteLine("                               ")
+                Console.WriteLine("                               ")
+                Console.WriteLine(" ___________                   ")
 
             Case 1
+                Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("                               ")
-                Console.WriteLine("       ___________             ")
-                Console.WriteLine("      | /         |            ")
-                Console.WriteLine("      |/          |            ")
-                Console.WriteLine("      |         (*_*)          ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
                 Console.WriteLine("      |                        ")
                 Console.WriteLine("      |                        ")
                 Console.WriteLine("      |                        ")
@@ -384,7 +387,55 @@ z:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 2
+                Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("                               ")
+                Console.WriteLine("      | /                      ")
+                Console.WriteLine("      |/                       ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine(" _____|_____                   ")
+
+            Case 3
+                Console.WriteLine("Fehlversuche: " & Fehlversuche)
+                Console.WriteLine("       ___________             ")
+                Console.WriteLine("      | /                      ")
+                Console.WriteLine("      |/                       ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine(" _____|_____                   ")
+
+            Case 4
+                Console.WriteLine("Fehlversuche: " & Fehlversuche)
+                Console.WriteLine("       ___________             ")
+                Console.WriteLine("      | /         |            ")
+                Console.WriteLine("      |/          |            ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine(" _____|_____                   ")
+
+            Case 5
+                Console.WriteLine("Fehlversuche: " & Fehlversuche)
+                Console.WriteLine("       ___________             ")
+                Console.WriteLine("      | /         |            ")
+                Console.WriteLine("      |/          |            ")
+                Console.WriteLine("      |         (*_*)          ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine("      |                        ")
+                Console.WriteLine(" _____|_____                   ")
+
+            Case 6
+                Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
                 Console.WriteLine("      |/          |            ")
@@ -395,8 +446,8 @@ z:
                 Console.WriteLine("      |                        ")
                 Console.WriteLine(" _____|_____                   ")
 
-            Case 3
-                Console.WriteLine("                               ")
+            Case 7
+                Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
                 Console.WriteLine("      |/          |            ")
@@ -407,8 +458,8 @@ z:
                 Console.WriteLine("      |                        ")
                 Console.WriteLine(" _____|_____                   ")
 
-            Case 4
-                Console.WriteLine("                               ")
+            Case 8
+                Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
                 Console.WriteLine("      |/          |            ")
@@ -419,8 +470,8 @@ z:
                 Console.WriteLine("      |                        ")
                 Console.WriteLine(" _____|_____                   ")
 
-            Case 5
-                Console.WriteLine("                               ")
+            Case 9
+                Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
                 Console.WriteLine("      |/          |            ")
@@ -432,7 +483,7 @@ z:
                 Console.WriteLine(" _____|_____                   ")
 
             Case Else
-                Console.WriteLine("                               ")
+                Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
                 Console.WriteLine("      |/          |            ")
@@ -442,11 +493,6 @@ z:
                 Console.WriteLine("      |          / \           ")
                 Console.WriteLine("      |         /   \          ")
                 Console.WriteLine(" _____|_____                   ")
-
-
-
-
-
 
         End Select
 
@@ -464,6 +510,17 @@ z:
         '    Case Else
         '        Console.WriteLine("Fehlversuche:" & Fehlversuche)
         'End Select
+
+
+
+
+
+
+
+
+
+
+
 
     End Sub
 

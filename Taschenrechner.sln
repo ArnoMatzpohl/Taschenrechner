@@ -15,6 +15,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Wahrheitswerte", "Wahrheits
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FunktionenUndMethoden", "FunktionenUndMethoden\FunktionenUndMethoden.vbproj", "{B4DD6E27-AC72-4EFD-A790-4144422404DE}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Spielerein", "Spielerein\Spielerein.vbproj", "{F7C1F6BC-7F71-4357-831A-C34E2069AC0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{B4DD6E27-AC72-4EFD-A790-4144422404DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4DD6E27-AC72-4EFD-A790-4144422404DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4DD6E27-AC72-4EFD-A790-4144422404DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7C1F6BC-7F71-4357-831A-C34E2069AC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7C1F6BC-7F71-4357-831A-C34E2069AC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7C1F6BC-7F71-4357-831A-C34E2069AC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7C1F6BC-7F71-4357-831A-C34E2069AC0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

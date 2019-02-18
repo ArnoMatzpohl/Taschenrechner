@@ -1,0 +1,161 @@
+﻿1.) Deklariere Variablen mit allen dir bekannten Datentypen
+
+
+    Dim f As String
+    Dim n As Integer
+    Dim m As Boolean
+	
+	
+2.) Deklariere Funktionen mit allen dir bekannten Datentypen
+
+
+    Function z() As Integer
+
+    End Function
+
+    Function i() As String
+
+    End Function
+
+    Function q(Parameter1, Parameter2) As Boolean
+
+    End Function
+	
+	
+3.) Deklariere eine Funktion ohne Rückgabewert mit 2 Parametern
+
+
+ Sub l(Parameter1 as String, Parameter2 as String)
+
+    End Sub
+	
+	
+4.) Deklariere eine Funktion die einen Wahrheitswert zurückgibt
+
+
+   Function t() As Boolean
+
+    End Function
+	
+	
+5.) Deklariere eine Funktion die einen Parameter vom Typ String enthält und einen zahl zurückgibt
+
+
+   Function c(g As String) As Integer
+
+    End Function
+	
+	
+6.) Erzeuge eine Zählschleife die von 1 bis 5 zählt.
+
+
+    For h As Integer = 1 To 5
+
+    Next
+
+	
+7.) Erzeuge eine Zählschleife die vom Anfang bis zum Ende des Stringparameters mit Namen "Wort" zählt
+
+
+    For s As Integer = 0 To Wort.lenght -1
+        
+    Next
+
+	
+8.) Gib zu der in 7.) genannten Schleife den Buchstaben an der Stelle der Zählvariable aus.
+
+
+    For s As Integer = 0 To Wort.length -1
+        Console.Writeline(Wort(s))
+    Next
+
+	
+9.) Überprüfe ob in der Variable "a" die Zahl 10 steht
+
+	Select Case a 
+		Case 10
+			console.beep
+	End Select
+	
+	If a = 10 then
+		console.beep
+	
+	End If
+	
+10.) Überprüfe ob in der Variable "b" der Buchstabe "c" steht
+
+	Select Case b 
+		Case "c"
+			console.beep
+	End Select
+	
+	If b = "c" then
+		console.beep
+	
+	End If
+	
+11.) Weise der Variable "a" den Wert 10 zu
+
+	a = 10
+	
+12.) Weise der Variable "b" den festen Text "Hallo WElt zu" zu
+
+	b = "Hallo WElt zu"
+	
+13.) Rufe die Funktion mit Namen "Blub" auf
+	
+	Blub()
+	
+14.) Rufe die Funktion mit Namen "gibMal" auf und weise den zurückkommenden Wert der Variable "c" zu
+
+	c = Gibmal()
+	
+15.) Überprüfe ob die Funktion "istWahr" den Wahrheitswert "true" zurückgibt
+
+	
+	If istWahr() = true then
+		Console.beep
+	end if 
+	
+	
+16.) Schreibe die Überprüfung aus 15 so um, dass der WErt erst in eine Variable geschreibne wird und dann überprüft wird
+	Dim hallo as boolean
+	
+	hallo = istWahr()
+	
+	If hallo = true then	
+		console.beep
+	
+	end if
+	
+17.) Rufe die Funktion "hat2p" auf und übergebe ihr 2 feste Texte als Parameter
+
+	hat2p("Text1", "Text2")
+
+18.) Rufe die Funktion "hat1p" auf und übergebe die Zahl 10
+
+	hat1p(10)
+
+19.) Rufe die Funktion "varp" auf und übergebe die Variable "x" und "y" als Parameter
+	
+	varp(x, y)
+
+20.) Gebe das Zeichen an Indexposition 10 der Stringvariable "alpha" aus
+
+	alpha(10)
+
+21.) Überprüfe ob das Zeichen der Stringvariable "beta" an Indexposition 7 dem Buhstaben "a" entspricht/gleicht
+
+	If beta(7) = "a" then
+		Console.writeline("ja")
+	end If
+
+
+
+22.) Gebe das Zeichen an Indexposition 2 vom festen Text "Wort" aus
+
+	"Wort"(2)
+
+23.) Überprüfe ob die Stringvariable "delta" den Buchstaben "e" enthält unter Anwendung der Funktion "Contains" welche auf jeder Stringvariable definiert ist
+
+	delta.contains("e")
