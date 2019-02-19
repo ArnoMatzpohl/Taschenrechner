@@ -5,7 +5,7 @@ Module Hangman
     Sub Main() ''Hauptprogrm
 
 
-
+ö:
 
         'Dim Zahln As List(Of Integer)
         Dim AlleWörter As String
@@ -18,13 +18,13 @@ Module Hangman
         'Console.WriteLine(Wörter(1))
 
         For i = 0 To Wörter.Count - 1
-            Console.WriteLine(Wörter(i))
+            ' Console.WriteLine(Wörter(i))
         Next
 
         Dim LetzeWort As String = Wörter(Wörter.Count - 1)
         Dim VorLetzeWort As String = Wörter(Wörter.Count - 2)
 
-        Console.WriteLine("Die Wortliste enthält: " & Wörter.Count)
+        ''Console.WriteLine("Die Wortliste enthält: " & Wörter.Count)
 
         'weise der Variable "ZufälligesWort" ein zufälliges Wort aus der Wörterliste zu
 
@@ -185,63 +185,68 @@ c:
 
 
         'Console.WriteLine("Gebe einen Text ein welcher erraten werden soll...") 'Es wird in die Konsole geschrieben "Gebe einen Text ein..."
-        Dim EingegebenerText As String
+        'Dim ZufälligesWort As String
         'Die Variable "EingegebenerText" wird Definirt. Sie hat den Datentyp String. EingegebenerText übernimmt den Wert von Console.ReadLine
-        Dim RandomZahl As New Random()
+        'Dim RandomZahl As New Random()
 
-        Randomize()
+        'Randomize()
 
-        Dim Zahl As Integer = RandomZahl.Next(0, 20)
+        'Dim Zahl As Integer = RandomZahl.Next(0, 20)
 
 
 
-        Select Case Zahl
-            Case 0
-                EingegebenerText = "Spiel"
-            Case 1
-                EingegebenerText = "Baum"
-            Case 2
-                EingegebenerText = "Haus"
-            Case 3
-                EingegebenerText = "Lellek"
-            Case 4
-                EingegebenerText = "Familie"
-            Case 5
-                EingegebenerText = "Computer"
-            Case 6
-                EingegebenerText = "Schnee"
-            Case 7
-                EingegebenerText = "Steak"
-            Case 8
-                EingegebenerText = "Nashorn"
-            Case 9
-                EingegebenerText = "Tier"
-            Case 10
-                EingegebenerText = "Telefon"
-            Case 11
-                EingegebenerText = "Kabel"
-            Case 12
-                EingegebenerText = "Schule"
-            Case 13
-                EingegebenerText = "Apfel"
-            Case 14
-                EingegebenerText = "Figur"
-            Case 15
-                EingegebenerText = "Nudel"
-            Case 16
-                EingegebenerText = "Amerika"
-            Case 17
-                EingegebenerText = "Müsli"
-            Case 18
-                EingegebenerText = "Arbeitsplatz"
-            Case 19
-                EingegebenerText = "Versicherung"
-            Case 20
-                EingegebenerText = "Sport"
-        End Select
+        'Select Case Zahl
+        '    Case 0
+        '        EingegebenerText = "Spiel"
+        '    Case 1
+        '        EingegebenerText = "Baum"
+        '    Case 2
+        '        EingegebenerText = "Haus"
+        '    Case 3
+        '        EingegebenerText = "Lellek"
+        '    Case 4
+        '        EingegebenerText = "Familie"
+        '    Case 5
+        '        EingegebenerText = "Computer"
+        '    Case 6
+        '        EingegebenerText = "Schnee"
+        '    Case 7
+        '        EingegebenerText = "Steak"
+        '    Case 8
+        '        EingegebenerText = "Nashorn"
+        '    Case 9
+        '        EingegebenerText = "Tier"
+        '    Case 10
+        '        EingegebenerText = "Telefon"
+        '    Case 11
+        '        EingegebenerText = "Kabel"
+        '    Case 12
+        '        EingegebenerText = "Schule"
+        '    Case 13
+        '        EingegebenerText = "Apfel"
+        '    Case 14
+        '        EingegebenerText = "Figur"
+        '    Case 15
+        '        EingegebenerText = "Nudel"
+        '    Case 16
+        '        EingegebenerText = "Amerika"
+        '    Case 17
+        '        EingegebenerText = "Müsli"
+        '    Case 18
+        '        EingegebenerText = "Arbeitsplatz"
+        '    Case 19
+        '        EingegebenerText = "Versicherung"
+        '    Case 20
+        '        EingegebenerText = "Sport"
+        'End Select
+
+
+        Dim Fehlversuche As Integer
+        Fehlversuche = 0
+
 
         Dim WortlängeVonEingegebenerText As Integer ' Die Variable WortlängeVonEingegebenerText wird definirt und hat den Datentyp Integer
-        WortlängeVonEingegebenerText = EingegebenerText.Length 'Die länge von "EingegebenerText" wird WortlängeVonEingegebenerText übergeben
+        WortlängeVonEingegebenerText = ZufälligesWort.Length 'Die länge von "EingegebenerText" wird WortlängeVonEingegebenerText übergeben
         'Console.WriteLine(WortlängeVonEingegebenerText)
 
         'For A As Integer = 0 To WortlängeVonEingegebenerText - 1
@@ -253,7 +258,7 @@ c:
         'Next
 
         Dim B As String 'Dei Variable "B" wird definiert und hat den Dtatentyp String
-        B = EingegebenerText(0) ' B enthält das  erste Zeichen von EingegebenerText
+        B = ZufälligesWort(0) ' B enthält das  erste Zeichen von EingegebenerText
 
         'Console.WriteLine(WortEnthältBuchstabe("Welt", "F"))
 
@@ -263,7 +268,7 @@ c:
 
         RichtigGeratendeBuchstaben = ""
 
-        Dim Fehlversuche As Integer 'Dei Variable "Fehlversuche" wird Definirt und hat den Datantyp String
+        'Dei Variable "Fehlversuche" wird Definirt und hat den Datantyp String
 
         Dim RichtigGeratendeBuchstabenAnzahl As Integer 'Dei Variable "RichtigGeratendeBuchstabenAnzahl" wird Definirt und hat den Datantyp String
 
@@ -271,7 +276,7 @@ c:
             RichtigGeratendeBuchstabenAnzahl = 0 'RichtigGeratendeBuchstabenAnzahl enthählt 0
             Console.Clear() 'Die Konsole wird gelöscht
             HangmanZeichnen(Fehlversuche) 'Es wird die Funktion Hangman Zeichnen aufgerufen und ihr wird Fehlversuche übergeben
-            Dim Franz As String = Kleinbuchstaben1(EingegebenerText)
+            Dim Franz As String = Kleinbuchstaben1(ZufälligesWort)
             Dim Heidi As String = Kleinbuchstaben2(RichtigGeratendeBuchstaben)
             zeichneBisherGerateneBuchstaben(Franz, Heidi)
             Console.WriteLine("Gebe einen Buchstaben ein...") 'Es wird in die Konsole geschrieben: "Gebe einen Buchstaben ein..."
@@ -281,17 +286,17 @@ c:
             'Console.ReadLine()
             Dim EnthältBuchstabe1 As Boolean
 
-            EnthältBuchstabe1 = EingegebenerText.ToLower.Contains(BuchstabeGeraten.ToLower)
+            EnthältBuchstabe1 = ZufälligesWort.ToLower.Contains(BuchstabeGeraten.ToLower)
 
             If EnthältBuchstabe1 = True Then 'Das Wort enthält den geratenden Buchstaben dann:
                 RichtigGeratendeBuchstaben = RichtigGeratendeBuchstaben & BuchstabeGeraten 'Der Wert von RichtigGeratendeBuchstaben & BuchstabeGeraten Wird RichtigGeratendeBuchstaben zugewiesen
                 'Console.WriteLine(RichtigGeratendeBuchstaben) 'In die Konsole wird das was In RichtigGeratendeBuchstaben steht geschrieben
-                For R As Integer = 0 To EingegebenerText.Length - 1 'Die schleife geht von 0 bis zu der Länge vom eingegebenen Text -1
+                For R As Integer = 0 To ZufälligesWort.Length - 1 'Die schleife geht von 0 bis zu der Länge vom eingegebenen Text -1
 
                     Dim EnthältBuchstabe As Boolean
 
                     '  EnthältBuchstabe = WortEnthältBuchstabe(RichtigGeratendeBuchstaben, EingegebenerText(R))
-                    EnthältBuchstabe = RichtigGeratendeBuchstaben.ToLower.Contains(EingegebenerText.ToLower()(R))
+                    EnthältBuchstabe = RichtigGeratendeBuchstaben.ToLower.Contains(ZufälligesWort.ToLower()(R))
 
                     If EnthältBuchstabe = True Then
                         RichtigGeratendeBuchstabenAnzahl += 1 'zu RichtigGeratendeBuchstabenAnzahl wird einer dazu gezählt 
@@ -304,9 +309,21 @@ c:
 
                 Next
 
-                If RichtigGeratendeBuchstabenAnzahl = EingegebenerText.Length Then
-                    Console.WriteLine("Herzlichen Glückwunsch " & Name & "! Das Wort ist: " & EingegebenerText) 'In die Konsole wird geschrieben: "Herzlichen Glückwunsch! Das Wort ist: " & EingegebenerText
-                    Console.ReadLine()
+                If RichtigGeratendeBuchstabenAnzahl = ZufälligesWort.Length Then
+                    Console.WriteLine("Herzlichen Glückwunsch " & Name & "! Das Wort ist: " & ZufälligesWort) 'In die Konsole wird geschrieben: "Herzlichen Glückwunsch! Das Wort ist: " & EingegebenerText
+
+
+                    Console.WriteLine("Möchtest du noch eine Runde Spielen?")
+                    Dim AntwortRunde As String = Console.ReadLine
+                    Console.Clear()
+                    Select Case AntwortRunde
+                        Case "Ja", "ja", "jA", "Weiter", "weiter"
+                            GoTo ö
+                        Case Else
+                            Environment.Exit(0)
+                    End Select
+
+
                 End If
             Else 'Das Wort enthält nicht den Buchstaben
                 Fehlversuche = Fehlversuche + 1 'Zu Fehversuchen wird 1 (Fehlversuch) hinzugefügt
