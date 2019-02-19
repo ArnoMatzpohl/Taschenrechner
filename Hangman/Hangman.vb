@@ -1,4 +1,6 @@
-﻿Module Hangman
+﻿'Option Strict On
+
+Module Hangman
 
     Sub Main() ''Hauptprogrm
 
@@ -6,22 +8,43 @@
 
 
         'Dim Zahln As List(Of Integer)
-        'Dim AlleWörter As String
-        'Dim Wörter As List(Of String)
-        'Dim i As Integer
+        Dim AlleWörter As String
+        Dim Wörter As List(Of String)
+        Dim i As Integer
 
-        'AlleWörter = FileIO.FileSystem.ReadAllText("Wortliste.txt")
-        'Wörter = AlleWörter.Split({vbCrLf}, StringSplitOptions.RemoveEmptyEntries).ToList
+        AlleWörter = FileIO.FileSystem.ReadAllText("Wortliste.txt")
+        Wörter = AlleWörter.Split({vbCrLf}, StringSplitOptions.RemoveEmptyEntries).ToList
 
         'Console.WriteLine(Wörter(1))
 
-        'For i = 0 To Wörter.Count - 1
-        '    Console.WriteLine(Wörter(i))
-        'Next
+        For i = 0 To Wörter.Count - 1
+            Console.WriteLine(Wörter(i))
+        Next
 
-        'Console.WriteLine("Die Wortliste enthält: " & Wörter.Count)
+        Dim LetzeWort As String = Wörter(Wörter.Count - 1)
+        Dim VorLetzeWort As String = Wörter(Wörter.Count - 2)
 
-        'Console.ReadLine()
+        Console.WriteLine("Die Wortliste enthält: " & Wörter.Count)
+
+        'weise der Variable "ZufälligesWort" ein zufälliges Wort aus der Wörterliste zu
+
+        Dim ZufälligesWort As String
+
+
+        Dim RandomZahl1 As New Random()
+
+        Randomize()
+
+        Dim Zahl1 As Integer = RandomZahl1.Next(0, Wörter.Count)
+
+        Select Case Zahl1
+            Case Zahl1
+                ZufälligesWort = Wörter(Zahl1)
+        End Select
+
+
+
+        Console.ReadLine()
 
         'Dim Zählschleife As Integer
 
@@ -129,13 +152,13 @@ R:
 c:
         Console.Clear()
 
-        Dim currentDate2 = DateTime.Now
-        Console.WriteLine("Datum/Uhrzeit: " & currentDate2)
-        Console.WriteLine("")
-        Console.WriteLine("Wie viele Wörer Möchtest du erraten?")
-        Dim AnzahlRatewörter As Integer = Console.ReadLine
+        'Dim currentDate2 = DateTime.Now
+        'Console.WriteLine("Datum/Uhrzeit: " & currentDate2)
+        'Console.WriteLine("")
+        'Console.WriteLine("Wie viele Wörer Möchtest du erraten?")
+        'Dim AnzahlRatewörter As Integer = Console.ReadLine
 
-        Console.Clear()
+        'Console.Clear()
 
         Dim currentDate3 = DateTime.Now
         Console.WriteLine("Datum/Uhrzeit: " & currentDate3)
@@ -161,8 +184,62 @@ c:
         'Dim Lösungswort = Console.ReadLine
 
 
-        Console.WriteLine("Gebe einen Text ein welcher erraten werden soll...") 'Es wird in die Konsole geschrieben "Gebe einen Text ein..."
-        Dim EingegebenerText As String = Console.ReadLine 'Die Variable "EingegebenerText" wird Definirt. Sie hat den Datentyp String. EingegebenerText übernimmt den Wert von Console.ReadLine
+        'Console.WriteLine("Gebe einen Text ein welcher erraten werden soll...") 'Es wird in die Konsole geschrieben "Gebe einen Text ein..."
+        Dim EingegebenerText As String
+        'Die Variable "EingegebenerText" wird Definirt. Sie hat den Datentyp String. EingegebenerText übernimmt den Wert von Console.ReadLine
+        Dim RandomZahl As New Random()
+
+        Randomize()
+
+        Dim Zahl As Integer = RandomZahl.Next(0, 20)
+
+
+
+        Select Case Zahl
+            Case 0
+                EingegebenerText = "Spiel"
+            Case 1
+                EingegebenerText = "Baum"
+            Case 2
+                EingegebenerText = "Haus"
+            Case 3
+                EingegebenerText = "Lellek"
+            Case 4
+                EingegebenerText = "Familie"
+            Case 5
+                EingegebenerText = "Computer"
+            Case 6
+                EingegebenerText = "Schnee"
+            Case 7
+                EingegebenerText = "Steak"
+            Case 8
+                EingegebenerText = "Nashorn"
+            Case 9
+                EingegebenerText = "Tier"
+            Case 10
+                EingegebenerText = "Telefon"
+            Case 11
+                EingegebenerText = "Kabel"
+            Case 12
+                EingegebenerText = "Schule"
+            Case 13
+                EingegebenerText = "Apfel"
+            Case 14
+                EingegebenerText = "Figur"
+            Case 15
+                EingegebenerText = "Nudel"
+            Case 16
+                EingegebenerText = "Amerika"
+            Case 17
+                EingegebenerText = "Müsli"
+            Case 18
+                EingegebenerText = "Arbeitsplatz"
+            Case 19
+                EingegebenerText = "Versicherung"
+            Case 20
+                EingegebenerText = "Sport"
+        End Select
+
         Dim WortlängeVonEingegebenerText As Integer ' Die Variable WortlängeVonEingegebenerText wird definirt und hat den Datentyp Integer
         WortlängeVonEingegebenerText = EingegebenerText.Length 'Die länge von "EingegebenerText" wird WortlängeVonEingegebenerText übergeben
         'Console.WriteLine(WortlängeVonEingegebenerText)
@@ -228,7 +305,7 @@ c:
                 Next
 
                 If RichtigGeratendeBuchstabenAnzahl = EingegebenerText.Length Then
-                    Console.WriteLine("Herzlichen Glückwunsch" & Name & "! Das Wort ist: " & EingegebenerText) 'In die Konsole wird geschrieben: "Herzlichen Glückwunsch! Das Wort ist: " & EingegebenerText
+                    Console.WriteLine("Herzlichen Glückwunsch " & Name & "! Das Wort ist: " & EingegebenerText) 'In die Konsole wird geschrieben: "Herzlichen Glückwunsch! Das Wort ist: " & EingegebenerText
                     Console.ReadLine()
                 End If
             Else 'Das Wort enthält nicht den Buchstaben
