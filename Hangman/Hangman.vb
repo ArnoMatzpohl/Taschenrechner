@@ -5,46 +5,43 @@ Module Hangman
     Sub Main() ''Hauptprogrm
 
 
-ö:
-
-        'Dim Zahln As List(Of Integer)
-        Dim AlleWörter As String
-        Dim Wörter As List(Of String)
-        Dim i As Integer
-
-        AlleWörter = FileIO.FileSystem.ReadAllText("Wortliste.txt")
-        Wörter = AlleWörter.Split({vbCrLf}, StringSplitOptions.RemoveEmptyEntries).ToList
-
-        'Console.WriteLine(Wörter(1))
-
-        For i = 0 To Wörter.Count - 1
-            ' Console.WriteLine(Wörter(i))
-        Next
-
-        Dim LetzeWort As String = Wörter(Wörter.Count - 1)
-        Dim VorLetzeWort As String = Wörter(Wörter.Count - 2)
-
-        ''Console.WriteLine("Die Wortliste enthält: " & Wörter.Count)
-
-        'weise der Variable "ZufälligesWort" ein zufälliges Wort aus der Wörterliste zu
-
-        Dim ZufälligesWort As String
-
-
-        Dim RandomZahl1 As New Random()
-
-        Randomize()
-
-        Dim Zahl1 As Integer = RandomZahl1.Next(0, Wörter.Count)
-
-        Select Case Zahl1
-            Case Zahl1
-                ZufälligesWort = Wörter(Zahl1)
-        End Select
 
 
 
-        Console.ReadLine()
+        ''Dim Zahln As List(Of Integer)
+        'Dim AlleWörter As String
+        'Dim Wörter As List(Of String)
+        'Dim i As Integer
+
+        'AlleWörter = FileIO.FileSystem.ReadAllText("Wortliste.txt")
+        'Wörter = AlleWörter.Split({vbCrLf}, StringSplitOptions.RemoveEmptyEntries).ToList
+
+        ''Console.WriteLine(Wörter(1))
+
+        'For i = 0 To Wörter.Count - 1
+        '    ' Console.WriteLine(Wörter(i))
+        'Next
+
+        'Dim LetzeWort As String = Wörter(Wörter.Count - 1)
+        'Dim VorLetzeWort As String = Wörter(Wörter.Count - 2)
+
+        '''Console.WriteLine("Die Wortliste enthält: " & Wörter.Count)
+
+        ''weise der Variable "ZufälligesWort" ein zufälliges Wort aus der Wörterliste zu
+
+        'Dim ZufälligesWort As String
+
+
+        'Dim RandomZahl1 As New Random()
+
+        'Randomize()
+
+        'Dim Zahl1 As Integer = RandomZahl1.Next(0, Wörter.Count)
+
+        'Select Case Zahl1
+        '    Case Zahl1
+        '        ZufälligesWort = Wörter(Zahl1)
+        'End Select
 
         'Dim Zählschleife As Integer
 
@@ -103,29 +100,36 @@ Module Hangman
 
 
 a:
+
+
         Console.Clear()
         Dim Zählschleife As Integer
         Dim Schleife As String
 
 
         Dim currentDate = DateTime.Now
-        Console.Title = "Hangman 1"
+        Console.Title = "Hangman 1 (V 1.3)"
+        Console.ForegroundColor = ConsoleColor.Red
         Console.WriteLine("Datum/Uhrzeit: " & currentDate)
         Console.WriteLine("")
+        Console.ForegroundColor = ConsoleColor.Red
         Console.WriteLine("Dieses Spiel ist FSK18!")
+        Console.ForegroundColor = ConsoleColor.White
         For Zählschleife = 40 To 41 Step 1
-            Console.Beep() '(Zählschleife, 10)
+            'Console.Beep() '(Zählschleife, 10)
 
         Next
+        Console.ForegroundColor = ConsoleColor.Red
         Console.WriteLine("--------------")
         Console.WriteLine("Gebe dein Passwort ein:")
         Console.WriteLine("")
+        Console.ForegroundColor = ConsoleColor.White
         Dim OK As String = Console.ReadLine()
         Dim OKif As String
 
         Select Case OK
             Case "Bistro Öz Tadim", "Arno", "a"
-                Console.Beep()
+                ' Console.Beep()
                 GoTo R
                 'Case Else
                 '    GoTo a
@@ -137,9 +141,11 @@ R:
         Console.Clear()
 
         Dim currentDate1 = DateTime.Now
+        Console.ForegroundColor = ConsoleColor.Red
         Console.WriteLine("Datum/Uhrzeit: " & currentDate1)
         Console.WriteLine("")
         Console.WriteLine("Wie alt bist du?")
+        Console.ForegroundColor = ConsoleColor.White
         Dim Alter As Integer = Console.ReadLine
         Dim FSK18 As Integer = 18
 
@@ -161,20 +167,22 @@ c:
         'Console.Clear()
 
         Dim currentDate3 = DateTime.Now
+        Console.ForegroundColor = ConsoleColor.Red
         Console.WriteLine("Datum/Uhrzeit: " & currentDate3)
         Console.WriteLine("")
         Console.WriteLine("Wie ist dein Name?")
+        Console.ForegroundColor = ConsoleColor.White
         Dim Name As String = Console.ReadLine
 
         Console.Clear()
-
+        Console.ForegroundColor = ConsoleColor.Red
         Console.WriteLine("Datum/Uhrzeit: " & currentDate)
 
         Console.WriteLine("")
 
         Console.WriteLine("Hallo " & Name & ", willkommen zurrück!")
         For Zählschleife = 40 To 41 Step 1
-            Console.Beep() '(Zählschleife, 10)
+            'Console.Beep() '(Zählschleife, 10)
 
         Next
         Console.WriteLine("")
@@ -239,7 +247,41 @@ c:
         '    Case 20
         '        EingegebenerText = "Sport"
         'End Select
+ö:
+        'Dim Zahln As List(Of Integer)
+        Dim AlleWörter As String
+        Dim Wörter As List(Of String)
+        Dim i As Integer
 
+        AlleWörter = FileIO.FileSystem.ReadAllText("Wortliste.txt")
+        Wörter = AlleWörter.Split({vbCrLf}, StringSplitOptions.RemoveEmptyEntries).ToList
+
+        'Console.WriteLine(Wörter(1))
+
+        For i = 0 To Wörter.Count - 1
+            ' Console.WriteLine(Wörter(i))
+        Next
+
+        Dim LetzeWort As String = Wörter(Wörter.Count - 1)
+        Dim VorLetzeWort As String = Wörter(Wörter.Count - 2)
+
+        ''Console.WriteLine("Die Wortliste enthält: " & Wörter.Count)
+
+        'weise der Variable "ZufälligesWort" ein zufälliges Wort aus der Wörterliste zu
+
+        Dim ZufälligesWort As String
+
+
+        Dim RandomZahl1 As New Random()
+
+        Randomize()
+
+        Dim Zahl1 As Integer = RandomZahl1.Next(0, Wörter.Count)
+
+        Select Case Zahl1
+            Case Zahl1
+                ZufälligesWort = Wörter(Zahl1)
+        End Select
 
         Dim Fehlversuche As Integer
         Fehlversuche = 0
@@ -279,7 +321,9 @@ c:
             Dim Franz As String = Kleinbuchstaben1(ZufälligesWort)
             Dim Heidi As String = Kleinbuchstaben2(RichtigGeratendeBuchstaben)
             zeichneBisherGerateneBuchstaben(Franz, Heidi)
-            Console.WriteLine("Gebe einen Buchstaben ein...") 'Es wird in die Konsole geschrieben: "Gebe einen Buchstaben ein..."
+            Console.ForegroundColor = ConsoleColor.Red
+            Console.WriteLine("Gebe einen Buchstaben ein...")
+            Console.ForegroundColor = ConsoleColor.White 'Es wird in die Konsole geschrieben: "Gebe einen Buchstaben ein..."
             Dim BuchstabeGeraten As String = Console.ReadLine 'Die Variable BuchstabeGeraten wird Definiert, hat den Datentypen String und übernimmt den Wert von Console.Readline
             'Console.WriteLine(WortEnthältBuchstabe(EingegebenerText, BuchstabeGeraten)) 'Es wird überprüft ob der eingegebene Buchstabe in dem Eingegebenen test Enthalten ist.
 
@@ -310,10 +354,12 @@ c:
                 Next
 
                 If RichtigGeratendeBuchstabenAnzahl = ZufälligesWort.Length Then
+                    Console.ForegroundColor = ConsoleColor.Red
                     Console.WriteLine("Herzlichen Glückwunsch " & Name & "! Das Wort ist: " & ZufälligesWort) 'In die Konsole wird geschrieben: "Herzlichen Glückwunsch! Das Wort ist: " & EingegebenerText
 
 
                     Console.WriteLine("Möchtest du noch eine Runde Spielen?")
+                    Console.ForegroundColor = ConsoleColor.White
                     Dim AntwortRunde As String = Console.ReadLine
                     Console.Clear()
                     Select Case AntwortRunde
@@ -423,7 +469,9 @@ c:
     End Sub
 
     Function GeratenderBuchstabe() As String
+        Console.ForegroundColor = ConsoleColor.Red
         Console.WriteLine("Gebe einen buchstaben ein...")
+        Console.ForegroundColor = ConsoleColor.White
         Dim EigegebenerBuchstabe As String = Console.ReadLine
         Return EigegebenerBuchstabe
     End Function
@@ -441,9 +489,11 @@ c:
         For Zähler As Integer = 0 To Wort.Length - 1
 
             If richtigeBuchstaben.Contains(Wort(Zähler)) Then
+                Console.ForegroundColor = ConsoleColor.White
                 Console.Write(Wort(Zähler) & " ")
 
             Else
+                Console.ForegroundColor = ConsoleColor.Gray
                 Console.Write("_ ")
             End If
 
@@ -456,7 +506,8 @@ c:
 
         Select Case Fehlversuche 'was ist in Fehlversuchen drinne
 
-            Case 0 'Fehversuch = 0 dann den Galgen malen       
+            Case 0 'Fehversuch = 0 dann den Galgen malen  
+                Console.ForegroundColor = ConsoleColor.Red
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("                               ")
                 Console.WriteLine("                               ")
@@ -469,6 +520,7 @@ c:
                 Console.WriteLine(" ___________                   ")
 
             Case 1
+                Console.ForegroundColor = ConsoleColor.Red
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("                               ")
                 Console.WriteLine("      |                        ")
@@ -481,6 +533,7 @@ c:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 2
+                Console.ForegroundColor = ConsoleColor.Red
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("                               ")
                 Console.WriteLine("      | /                      ")
@@ -493,6 +546,7 @@ c:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 3
+                Console.ForegroundColor = ConsoleColor.Red
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /                      ")
@@ -505,6 +559,7 @@ c:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 4
+                Console.ForegroundColor = ConsoleColor.Red
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
@@ -517,6 +572,7 @@ c:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 5
+                Console.ForegroundColor = ConsoleColor.Red
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
@@ -529,6 +585,7 @@ c:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 6
+                Console.ForegroundColor = ConsoleColor.Red
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
@@ -541,6 +598,7 @@ c:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 7
+                Console.ForegroundColor = ConsoleColor.Red
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
@@ -553,6 +611,7 @@ c:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 8
+                Console.ForegroundColor = ConsoleColor.Red
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
@@ -565,6 +624,7 @@ c:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 9
+                Console.ForegroundColor = ConsoleColor.Red
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
@@ -577,6 +637,7 @@ c:
                 Console.WriteLine(" _____|_____                   ")
 
             Case Else
+                Console.ForegroundColor = ConsoleColor.Red
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
