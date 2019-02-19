@@ -174,6 +174,11 @@ c:
         Console.ForegroundColor = ConsoleColor.White
         Dim Name As String = Console.ReadLine
 
+        If Name = "John Webber" Then
+            Environment.Exit(0)
+        Else GoTo L
+        End If
+L:
         Console.Clear()
         Console.ForegroundColor = ConsoleColor.Red
         Console.WriteLine("Datum/Uhrzeit: " & currentDate)
