@@ -17,6 +17,10 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FunktionenUndMethoden", "Fu
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Spielerein", "Spielerein\Spielerein.vbproj", "{F7C1F6BC-7F71-4357-831A-C34E2069AC0E}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RandomPasswort", "RandomPasswort\RandomPasswort.vbproj", "{CA24AD39-2BA6-46F7-BF8F-F0320D53CA71}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "random", "random\random.vbproj", "{8082D3D1-C314-4242-9810-ACBB7C69A6C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{F7C1F6BC-7F71-4357-831A-C34E2069AC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7C1F6BC-7F71-4357-831A-C34E2069AC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7C1F6BC-7F71-4357-831A-C34E2069AC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA24AD39-2BA6-46F7-BF8F-F0320D53CA71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA24AD39-2BA6-46F7-BF8F-F0320D53CA71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA24AD39-2BA6-46F7-BF8F-F0320D53CA71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA24AD39-2BA6-46F7-BF8F-F0320D53CA71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8082D3D1-C314-4242-9810-ACBB7C69A6C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8082D3D1-C314-4242-9810-ACBB7C69A6C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8082D3D1-C314-4242-9810-ACBB7C69A6C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8082D3D1-C314-4242-9810-ACBB7C69A6C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -363,7 +363,7 @@ c:
                     Dim AntwortRunde As String = Console.ReadLine
                     Console.Clear()
                     Select Case AntwortRunde
-                        Case "Ja", "ja", "jA", "Weiter", "weiter"
+                        Case "Ja", "ja", "jA", "Weiter", "weiter", "JA"
                             GoTo ö
                         Case Else
                             Environment.Exit(0)
@@ -577,7 +577,7 @@ c:
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
                 Console.WriteLine("      |/          |            ")
-                Console.WriteLine("      |         (*_*)          ")
+                Console.WriteLine("      |         (>_<)          ")
                 Console.WriteLine("      |                        ")
                 Console.WriteLine("      |                        ")
                 Console.WriteLine("      |                        ")
@@ -590,7 +590,7 @@ c:
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
                 Console.WriteLine("      |/          |            ")
-                Console.WriteLine("      |         (*_*)          ")
+                Console.WriteLine("      |         (>_<)          ")
                 Console.WriteLine("      |           |            ")
                 Console.WriteLine("      |           |            ")
                 Console.WriteLine("      |                        ")
@@ -603,7 +603,7 @@ c:
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
                 Console.WriteLine("      |/          |            ")
-                Console.WriteLine("      |         (*_*)          ")
+                Console.WriteLine("      |         (>_<)          ")
                 Console.WriteLine("      |           | /          ")
                 Console.WriteLine("      |           |/           ")
                 Console.WriteLine("      |                        ")
@@ -616,7 +616,7 @@ c:
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
                 Console.WriteLine("      |/          |            ")
-                Console.WriteLine("      |         (*_*)          ")
+                Console.WriteLine("      |         (>_<)          ")
                 Console.WriteLine("      |         \ | /          ")
                 Console.WriteLine("      |          \|/           ")
                 Console.WriteLine("      |                        ")
@@ -629,7 +629,7 @@ c:
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
                 Console.WriteLine("      |/          |            ")
-                Console.WriteLine("      |         (*_*)          ")
+                Console.WriteLine("      |         (>_<)          ")
                 Console.WriteLine("      |         \ | /          ")
                 Console.WriteLine("      |          \|/           ")
                 Console.WriteLine("      |            \           ")

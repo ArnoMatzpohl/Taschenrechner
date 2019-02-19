@@ -1,4 +1,9 @@
 ﻿Haus
+Papa
+Mama
+Bruder
+Schwester
+Rapper
 Boot
 Versicherung
 Wurst
