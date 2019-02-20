@@ -1,5 +1,20 @@
 ﻿Public Class Form1
+
+
+
+
+    Sub AssertAreEqual(actual As Integer, expected As Integer)
+        If actual <> expected Then
+            Throw New InvalidOperationException("actual does not equal expected")
+        End If
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+
+
+        ' AssertAreEqual(GenerierePasswort(10).Length, 10)
+        ' AssertAreEqual(GenerierePasswort(15).Length, 15)
 
         Dim Haus As String
         Dim Baum As String
@@ -65,7 +80,56 @@
 
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+    ''' <summary>
+    ''' Generiert ein Passwort der Länge des übergebenen Parameters Länge.
+    ''' </summary>
+    ''' <param name="Länge">Die Länge des Passworts.</param>
+    Function GenerierePasswort(Länge As Integer) As String
+
+        Dim Passwort As String = TextBox1.Text
+
+
+
+        Return Passwort
+    End Function
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        'Texbox 3 zum Verwendungszweck und Textbox4 die Speicherliste
+        Dim NeueZeile As String 'vb "vbCrLf"
+        Dim Verwendungszweck As String = TextBox3.Text
+
+
+        'For SchleifeSpeichern As Integer = 0 To 10
+
+
+
+
+        'TextBox2.Text = TextBox3.Text & ": " & TextBox1.Text
+
+        NeueZeile = vbCrLf
+
+        TextBox2.Text = TextBox2.Text & Verwendungszweck & ": " & TextBox1.Text & NeueZeile
+
+
+
+        FileIO.FileSystem.WriteAllText("C:\Users\arnomatz\Documents\GepeichertePasswörter.txt", TextBox2.Text, False)
+
+        ' Next
+
+
+
+
+
 
     End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim ausgelesenerText As String = FileIO.FileSystem.ReadAllText("C:\Users\arnomatz\Documents\GepeichertePasswörter.txt")
+
+        TextBox2.Text = ausgelesenerText
+
+    End Sub
+
 End Class

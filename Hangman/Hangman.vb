@@ -109,17 +109,17 @@ a:
 
         Dim currentDate = DateTime.Now
         Console.Title = "Hangman 1 (V 1.3)"
-        Console.ForegroundColor = ConsoleColor.Red
+        Console.ForegroundColor = ConsoleColor.DarkRed
         Console.WriteLine("Datum/Uhrzeit: " & currentDate)
         Console.WriteLine("")
-        Console.ForegroundColor = ConsoleColor.Red
+        Console.ForegroundColor = ConsoleColor.DarkRed
         Console.WriteLine("Dieses Spiel ist FSK18!")
         Console.ForegroundColor = ConsoleColor.White
         For Zählschleife = 40 To 41 Step 1
             'Console.Beep() '(Zählschleife, 10)
 
         Next
-        Console.ForegroundColor = ConsoleColor.Red
+        Console.ForegroundColor = ConsoleColor.DarkRed
         Console.WriteLine("--------------")
         Console.WriteLine("Gebe dein Passwort ein:")
         Console.WriteLine("")
@@ -141,7 +141,7 @@ R:
         Console.Clear()
 
         Dim currentDate1 = DateTime.Now
-        Console.ForegroundColor = ConsoleColor.Red
+        Console.ForegroundColor = ConsoleColor.DarkRed
         Console.WriteLine("Datum/Uhrzeit: " & currentDate1)
         Console.WriteLine("")
         Console.WriteLine("Wie alt bist du?")
@@ -167,7 +167,7 @@ c:
         'Console.Clear()
 
         Dim currentDate3 = DateTime.Now
-        Console.ForegroundColor = ConsoleColor.Red
+        Console.ForegroundColor = ConsoleColor.DarkRed
         Console.WriteLine("Datum/Uhrzeit: " & currentDate3)
         Console.WriteLine("")
         Console.WriteLine("Wie ist dein Name?")
@@ -180,7 +180,7 @@ c:
         End If
 L:
         Console.Clear()
-        Console.ForegroundColor = ConsoleColor.Red
+        Console.ForegroundColor = ConsoleColor.DarkRed
         Console.WriteLine("Datum/Uhrzeit: " & currentDate)
 
         Console.WriteLine("")
@@ -326,7 +326,7 @@ L:
             Dim Franz As String = Kleinbuchstaben1(ZufälligesWort)
             Dim Heidi As String = Kleinbuchstaben2(RichtigGeratendeBuchstaben)
             zeichneBisherGerateneBuchstaben(Franz, Heidi)
-            Console.ForegroundColor = ConsoleColor.Red
+            Console.ForegroundColor = ConsoleColor.DarkRed
             Console.WriteLine("Gebe einen Buchstaben ein...")
             Console.ForegroundColor = ConsoleColor.White 'Es wird in die Konsole geschrieben: "Gebe einen Buchstaben ein..."
             Dim BuchstabeGeraten As String = Console.ReadLine 'Die Variable BuchstabeGeraten wird Definiert, hat den Datentypen String und übernimmt den Wert von Console.Readline
@@ -359,7 +359,7 @@ L:
                 Next
 
                 If RichtigGeratendeBuchstabenAnzahl = ZufälligesWort.Length Then
-                    Console.ForegroundColor = ConsoleColor.Red
+                    Console.ForegroundColor = ConsoleColor.DarkRed
                     Console.WriteLine("Herzlichen Glückwunsch " & Name & "! Das Wort ist: " & ZufälligesWort) 'In die Konsole wird geschrieben: "Herzlichen Glückwunsch! Das Wort ist: " & EingegebenerText
 
 
@@ -474,7 +474,7 @@ L:
     End Sub
 
     Function GeratenderBuchstabe() As String
-        Console.ForegroundColor = ConsoleColor.Red
+        Console.ForegroundColor = ConsoleColor.DarkRed
         Console.WriteLine("Gebe einen buchstaben ein...")
         Console.ForegroundColor = ConsoleColor.White
         Dim EigegebenerBuchstabe As String = Console.ReadLine
@@ -512,7 +512,7 @@ L:
         Select Case Fehlversuche 'was ist in Fehlversuchen drinne
 
             Case 0 'Fehversuch = 0 dann den Galgen malen  
-                Console.ForegroundColor = ConsoleColor.Red
+                Console.ForegroundColor = ConsoleColor.DarkRed
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("                               ")
                 Console.WriteLine("                               ")
@@ -525,7 +525,7 @@ L:
                 Console.WriteLine(" ___________                   ")
 
             Case 1
-                Console.ForegroundColor = ConsoleColor.Red
+                Console.ForegroundColor = ConsoleColor.DarkRed
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("                               ")
                 Console.WriteLine("      |                        ")
@@ -538,7 +538,7 @@ L:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 2
-                Console.ForegroundColor = ConsoleColor.Red
+                Console.ForegroundColor = ConsoleColor.DarkRed
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("                               ")
                 Console.WriteLine("      | /                      ")
@@ -551,7 +551,7 @@ L:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 3
-                Console.ForegroundColor = ConsoleColor.Red
+                Console.ForegroundColor = ConsoleColor.DarkRed
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /                      ")
@@ -564,7 +564,7 @@ L:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 4
-                Console.ForegroundColor = ConsoleColor.Red
+                Console.ForegroundColor = ConsoleColor.DarkRed
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
@@ -577,7 +577,7 @@ L:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 5
-                Console.ForegroundColor = ConsoleColor.Red
+                Console.ForegroundColor = ConsoleColor.DarkRed
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
@@ -590,7 +590,7 @@ L:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 6
-                Console.ForegroundColor = ConsoleColor.Red
+                Console.ForegroundColor = ConsoleColor.DarkRed
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
@@ -603,7 +603,7 @@ L:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 7
-                Console.ForegroundColor = ConsoleColor.Red
+                Console.ForegroundColor = ConsoleColor.DarkRed
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
@@ -616,7 +616,7 @@ L:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 8
-                Console.ForegroundColor = ConsoleColor.Red
+                Console.ForegroundColor = ConsoleColor.DarkRed
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
@@ -629,7 +629,7 @@ L:
                 Console.WriteLine(" _____|_____                   ")
 
             Case 9
-                Console.ForegroundColor = ConsoleColor.Red
+                Console.ForegroundColor = ConsoleColor.DarkRed
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
@@ -642,7 +642,7 @@ L:
                 Console.WriteLine(" _____|_____                   ")
 
             Case Else
-                Console.ForegroundColor = ConsoleColor.Red
+                Console.ForegroundColor = ConsoleColor.DarkRed
                 Console.WriteLine("Fehlversuche: " & Fehlversuche)
                 Console.WriteLine("       ___________             ")
                 Console.WriteLine("      | /         |            ")
