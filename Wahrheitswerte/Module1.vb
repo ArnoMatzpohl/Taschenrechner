@@ -52,6 +52,25 @@
         Console.ReadLine()
 
 
+        Dim Zahl5 As Integer
+        Dim Zahl6 As Integer
+        Dim Zahl7 As Integer
+        Dim Wahrheitswert As Boolean
+        Dim Wahrheitswert1 As Boolean
+        Dim Wahrheitswert2 As Boolean
+
+        Zahl7 = 3
+        Zahl5 = 1
+        Zahl6 = 2
+
+
+        Wahrheitswert = 5 > 3
+        Wahrheitswert1 = 5 > 4
+        Wahrheitswert2 = Wahrheitswert And Wahrheitswert1
+        Wahrheitswert2 = Wahrheitswert Or Wahrheitswert1
+        Wahrheitswert2 = Wahrheitswert Or Not Wahrheitswert1
+
+
     End Sub
 
 End Module

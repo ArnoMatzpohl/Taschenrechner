@@ -21,7 +21,9 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RandomPasswort", "RandomPas
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "random", "random\random.vbproj", "{8082D3D1-C314-4242-9810-ACBB7C69A6C2}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "test2", "test2\test2.vbproj", "{A13455CB-CC30-425C-8DBE-E2B37CC169FF}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Passwort-Generator", "test2\Passwort-Generator.vbproj", "{A13455CB-CC30-425C-8DBE-E2B37CC169FF}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Verschiedenes", "Verschiedenes\Verschiedenes.vbproj", "{31B5039E-4E97-4ADF-845B-3BAC1E32236E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{A13455CB-CC30-425C-8DBE-E2B37CC169FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A13455CB-CC30-425C-8DBE-E2B37CC169FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A13455CB-CC30-425C-8DBE-E2B37CC169FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31B5039E-4E97-4ADF-845B-3BAC1E32236E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B5039E-4E97-4ADF-845B-3BAC1E32236E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B5039E-4E97-4ADF-845B-3BAC1E32236E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B5039E-4E97-4ADF-845B-3BAC1E32236E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
