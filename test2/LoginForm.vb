@@ -25,6 +25,8 @@
                     Return True
                 End If
 
+
+
             Case "B"
                 If Passwort = "C" Then
 
@@ -39,9 +41,23 @@
 
                 End If
 
+
+
         End Select
+
+
+
+
+
+
     End Function
 
+
+
+    'PasswortForm.Show()
+    'Me.Hide()
+
+    'MessageBox.Show("Der Benutzernahme oder das Passwort ist falsch!")
 
 
 
@@ -59,39 +75,14 @@
         CurrentData.UserName = Benutzername
         CurrentData.Password = Passwort
 
-        Select Case Benutzername
-            Case "A"
-                If Passwort = "B" Then
-                    PasswortForm.Show()
-                    Me.Hide()
-                Else
-                    MessageBox.Show("Der Benutzernahme oder das Passwort ist falsch!")
-                End If
 
 
-
-            Case "B"
-                If Passwort = "C" Then
-                    PasswortForm.Show()
-                    Me.Hide()
-                Else
-                    MessageBox.Show("Der Benutzernahme oder das Passwort ist falsch!")
-                End If
-
-            Case "C"
-                If Passwort = "D" Then
-                    PasswortForm.Show()
-                    Me.Hide()
-                Else
-                    MessageBox.Show("Der Benutzernahme oder das Passwort ist falsch!")
-                End If
-
-            Case Else
-                MessageBox.Show("Der Benutzernahme oder das Passwort ist falsch!")
-
-        End Select
-
-
+        If IstLoginGülit(Benutzername, Passwort) = True Then
+            PasswortForm.Show()
+            Me.Hide()
+        Else
+            MessageBox.Show("Der Benutzernahme oder das Passwort ist falsch!")
+        End If
 
         Exit Sub
 
