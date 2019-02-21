@@ -44,7 +44,8 @@
             Dim Zahl2 As Integer
             Dim RandomZahl As Integer
             Dim Text As String
-            Dim Symbol As String
+            Dim Symbol1 As String
+            Dim Symbol2 As String
             'For Schleife2 As Long = 1 To Long.MaxValue
             Dim Zahl1 As Integer = RandomZahl1.Next(65, 91)
 
@@ -68,10 +69,13 @@
 
 
 
-            Dim SymboleRandom As Integer = RandomZahl1.Next(33, 38)
+            Dim SymboleRandom As Integer = RandomZahl1.Next(36, 39)
 
-            Symbol = Chr(SymboleRandom)
+            Symbol1 = Chr(SymboleRandom)
 
+            Dim SymboleRandom2 As Integer = RandomZahl1.Next(40, 44)
+
+            Symbol2 = Chr(SymboleRandom)
 
 
 
@@ -96,9 +100,9 @@
             Dim RandomZahl2 As Integer = RandomZahl1.Next(1, 3)
             'es soll entweder eine Zahl oder ein buchstabe ausgewählt werden und in die texbox eingefügt werden 
             If RandomZahl2 = 1 Then
-                TextBox1.Text = TextBox1.Text & Zahl2 & Symbol
+                TextBox1.Text = TextBox1.Text & Zahl2 & Symbol1
             Else
-                TextBox1.Text = TextBox1.Text & Text & Symbol
+                TextBox1.Text = TextBox1.Text & Text & Symbol2
             End If
 
 

@@ -16,6 +16,35 @@
 
     End Sub
 
+    Function IstLoginGülit(Benutzername As String, Passwort As String) As Boolean
+
+        Select Case Benutzername
+            Case "A"
+                If Passwort = "B" Then
+
+                    Return True
+                End If
+
+            Case "B"
+                If Passwort = "C" Then
+
+                    Return True
+
+                End If
+
+            Case "C"
+                If Passwort = "D" Then
+
+                    Return True
+
+                End If
+
+        End Select
+    End Function
+
+
+
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         Dim Benutzername As String
@@ -29,44 +58,89 @@
 
         CurrentData.UserName = Benutzername
         CurrentData.Password = Passwort
+
+        Select Case Benutzername
+            Case "A"
+                If Passwort = "B" Then
+                    PasswortForm.Show()
+                    Me.Hide()
+                Else
+                    MessageBox.Show("Der Benutzernahme oder das Passwort ist falsch!")
+                End If
+
+
+
+            Case "B"
+                If Passwort = "C" Then
+                    PasswortForm.Show()
+                    Me.Hide()
+                Else
+                    MessageBox.Show("Der Benutzernahme oder das Passwort ist falsch!")
+                End If
+
+            Case "C"
+                If Passwort = "D" Then
+                    PasswortForm.Show()
+                    Me.Hide()
+                Else
+                    MessageBox.Show("Der Benutzernahme oder das Passwort ist falsch!")
+                End If
+
+            Case Else
+                MessageBox.Show("Der Benutzernahme oder das Passwort ist falsch!")
+
+        End Select
+
+
+
+        Exit Sub
+
+        'das drunter ist alles müll und kann weg (kapier eh keiner)
+
         Dim PasswortFürBenutzerA As String
         Dim PasswortFürBenutzerB As String
         Dim PasswortFürBenutzerC As String
+        Dim BenutzernameFürBenutzerA As String
+        Dim BenutzernameFürBenutzerB As String
+        Dim BenutzernameFürBenutzerC As String
 
 
-        If Benutzername = "A" Then
+
+
+        If TextBox1.Text = "A" Then
             PasswortFürBenutzerA = "B"
+            BenutzernameFürBenutzerA = "A"
         End If
 
-        If Benutzername = "B" Then
+        If TextBox1.Text = "B" Then
             PasswortFürBenutzerB = "C"
+            BenutzernameFürBenutzerB = "B"
         End If
 
-        If Benutzername = "C" Then
+        If TextBox1.Text = "C" Then
             PasswortFürBenutzerC = "D"
+            BenutzernameFürBenutzerC = "C"
         End If
 
-
-
-        If Benutzername = "A" Or Benutzername = "B" Or Benutzername = "C" Then
-            Benutzername = 1
+        If BenutzernameFürBenutzerA = "A" Or BenutzernameFürBenutzerB = "B" Or BenutzernameFürBenutzerC = "C" Then
+            BenutzernameFürBenutzerA = 1 Or BenutzernameFürBenutzerB = 1 Or BenutzernameFürBenutzerC = 1
         Else
-            Benutzername = 2
+            BenutzernameFürBenutzerA = 2 Or BenutzernameFürBenutzerB = 2 Or BenutzernameFürBenutzerC = 2
 
         End If
 
-        If PasswortFürBenutzerA = PasswortFürBenutzerA Or PasswortFürBenutzerB = PasswortFürBenutzerB Or PasswortFürBenutzerC = PasswortFürBenutzerC Then
-            Passwort = 1
+        If PasswortFürBenutzerA = TextBox2.Text Or PasswortFürBenutzerB = TextBox2.Text Or PasswortFürBenutzerC = TextBox2.Text Then
+            PasswortFürBenutzerA = 1 Or PasswortFürBenutzerB = 1 Or PasswortFürBenutzerC = 1
         Else
-            Passwort = 2
+            PasswortFürBenutzerA = 2 Or PasswortFürBenutzerB = 2 Or PasswortFürBenutzerC = 2
 
 
         End If
 
-        If Benutzername = 1 And Passwort = 1 Then
+        If BenutzernameFürBenutzerA = 1 And PasswortFürBenutzerA = 1 Or BenutzernameFürBenutzerB = 1 And PasswortFürBenutzerB = 1 Or BenutzernameFürBenutzerC = 1 And PasswortFürBenutzerC = 1 Then
             PasswortForm.Show()
             Me.Hide()
-        ElseIf Benutzername = 2 And Passwort = 2 Then
+        ElseIf BenutzernameFürBenutzerA = 2 And PasswortFürBenutzerA = 2 Or BenutzernameFürBenutzerB = 2 And PasswortFürBenutzerB = 2 Or BenutzernameFürBenutzerC = 2 And PasswortFürBenutzerC = 2 Then
 
             MessageBox.Show("Der Benutzernahme oder das Passwort ist falsch!")
             ' Shell("C:\Users\arnomatz\Documents\Login Passwort-Generator\test2.exe")
