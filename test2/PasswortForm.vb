@@ -127,6 +127,11 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
+
+
+
+
+
         'Texbox 3 zum Verwendungszweck und Textbox4 die Speicherliste
         Dim NeueZeile As String 'vb "vbCrLf"
         Dim Verwendungszweck As String = TextBox3.Text
@@ -139,25 +144,27 @@
 
         'TextBox2.Text = TextBox3.Text & ": " & TextBox1.Text
 
-        NeueZeile = vbCrLf
+        If TextBox3.Text = "" Then
+            MessageBox.Show("Gebe einen Verwendungszweck ein du Lellek :D")
+        Else
 
-        TextBox2.Text = TextBox2.Text & Verwendungszweck & ": " & TextBox1.Text & NeueZeile
+            NeueZeile = vbCrLf
 
 
-        Dim benutzer As String = CurrentData.UserName
-        Dim passwort As String = CurrentData.Password
-        Dim encrypted As Byte() = CurrentData.Encrypt(TextBox2.Text, passwort)
+            TextBox2.Text = TextBox2.Text & Verwendungszweck & ": " & TextBox1.Text & NeueZeile
 
-        FileIO.FileSystem.WriteAllBytes(IO.Path.Combine("C:\Users\arnomatz\Documents", benutzer & ".pwd"), encrypted, False)
+
+            Dim benutzer As String = CurrentData.UserName
+            Dim passwort As String = CurrentData.Password
+            Dim encrypted As Byte() = CurrentData.Encrypt(TextBox2.Text, passwort)
+
+            FileIO.FileSystem.WriteAllBytes(IO.Path.Combine("C:\Users\arnomatz\Documents", benutzer & ".pwd"), encrypted, False)
+        End If
+
 
         'FileIO.FileSystem.WriteAllText("C:\Users\arnomatz\Documents\GepeichertePasswörter.txt", TextBox2.Text, False)
 
         ' Next
-
-
-
-
-
 
     End Sub
 
@@ -207,6 +214,7 @@
                 TextBox2.Text = ausgelesenerText
             Catch ex As Exception
                 MessageBox.Show("Falsches Passwort oder Datei beschädigt!")
+                Environment.Exit(0)
             End Try
         End If
 

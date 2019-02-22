@@ -23,9 +23,9 @@ Partial Class LoginForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginForm))
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BenutzerBox = New System.Windows.Forms.TextBox()
+        Me.PasswortBox = New System.Windows.Forms.TextBox()
+        Me.LoginButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -33,34 +33,35 @@ Partial Class LoginForm
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'BenutzerBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 77)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(162, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.BenutzerBox.Location = New System.Drawing.Point(12, 77)
+        Me.BenutzerBox.Name = "BenutzerBox"
+        Me.BenutzerBox.Size = New System.Drawing.Size(162, 20)
+        Me.BenutzerBox.TabIndex = 0
         '
-        'TextBox2
+        'PasswortBox
         '
-        Me.TextBox2.Location = New System.Drawing.Point(12, 116)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(162, 20)
-        Me.TextBox2.TabIndex = 1
+        Me.PasswortBox.Location = New System.Drawing.Point(12, 116)
+        Me.PasswortBox.Name = "PasswortBox"
+        Me.PasswortBox.Size = New System.Drawing.Size(162, 20)
+        Me.PasswortBox.TabIndex = 1
         '
-        'Button1
+        'LoginButton
         '
-        Me.Button1.Location = New System.Drawing.Point(99, 141)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Login"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.LoginButton.Location = New System.Drawing.Point(99, 142)
+        Me.LoginButton.Name = "LoginButton"
+        Me.LoginButton.Size = New System.Drawing.Size(75, 23)
+        Me.LoginButton.TabIndex = 2
+        Me.LoginButton.Text = "Login"
+        Me.LoginButton.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -84,7 +85,7 @@ Partial Class LoginForm
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(12, 141)
+        Me.Button2.Location = New System.Drawing.Point(12, 142)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 5
@@ -131,6 +132,17 @@ Partial Class LoginForm
         Me.PictureBox5.TabIndex = 18
         Me.PictureBox5.TabStop = False
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.CheckBox1.Location = New System.Drawing.Point(13, 171)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(161, 17)
+        Me.CheckBox1.TabIndex = 22
+        Me.CheckBox1.Text = "Als Neuen benutzer Anlegen"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
         'LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -138,6 +150,7 @@ Partial Class LoginForm
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ClientSize = New System.Drawing.Size(262, 257)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox2)
@@ -145,9 +158,9 @@ Partial Class LoginForm
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.LoginButton)
+        Me.Controls.Add(Me.PasswortBox)
+        Me.Controls.Add(Me.BenutzerBox)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "LoginForm"
@@ -162,9 +175,9 @@ Partial Class LoginForm
 
     End Sub
 
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BenutzerBox As TextBox
+    Friend WithEvents PasswortBox As TextBox
+    Friend WithEvents LoginButton As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Button2 As Button
@@ -172,4 +185,5 @@ Partial Class LoginForm
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents CheckBox1 As CheckBox
 End Class
