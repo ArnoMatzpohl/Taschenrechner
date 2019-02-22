@@ -206,7 +206,7 @@
                 ausgelesenerText = CurrentData.Decrypt(encryptedBytes, passwort)
                 TextBox2.Text = ausgelesenerText
             Catch ex As Exception
-                MessageBox.Show("Falsches Passwort oder Datei beschädigt.")
+                MessageBox.Show("Falsches Passwort oder Datei beschädigt!")
             End Try
         End If
 

@@ -50,4 +50,17 @@ Public Class CurrentData
         Return sha.ComputeHash(valueBytes)
     End Function
 
+    Public Shared Function HmacSha512(value As String) As Byte()
+        Return HmacSha512(value, "Arnos Slatzzzz.dfsdf. -.-")
+    End Function
+
+    Public Shared Function HmacSha512(value As String, salt As String) As Byte()
+        Dim hmac As New HMACSHA512(Text.Encoding.Unicode.GetBytes(salt))
+        Dim valueBytes As Byte()
+
+        valueBytes = Text.Encoding.Unicode.GetBytes(value)
+
+        Return hmac.ComputeHash(valueBytes)
+    End Function
+
 End Class
