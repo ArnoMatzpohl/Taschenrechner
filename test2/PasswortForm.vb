@@ -145,7 +145,7 @@
         'TextBox2.Text = TextBox3.Text & ": " & TextBox1.Text
 
         If TextBox3.Text = "" Then
-            MessageBox.Show("Gebe einen Verwendungszweck ein du Lellek :D")
+            MessageBox.Show("Gebe einen Verwendungszweck ein!")
         Else
 
             NeueZeile = vbCrLf
@@ -158,7 +158,9 @@
             Dim passwort As String = CurrentData.Password
             Dim encrypted As Byte() = CurrentData.Encrypt(TextBox2.Text, passwort)
 
-            FileIO.FileSystem.WriteAllBytes(IO.Path.Combine("C:\Users\arnomatz\Documents", benutzer & ".pwd"), encrypted, False)
+            FileIO.FileSystem.WriteAllText("Neu", vbCrLf, True)
+
+            'FileIO.FileSystem.WriteAllBytes(IO.Path.Combine("Neu", benutzer & ".pwd"), encrypted, False)
         End If
 
 
@@ -202,7 +204,7 @@
 
         Dim benutzer As String = CurrentData.UserName
         Dim passwort As String = CurrentData.Password
-        Dim filePath As String = IO.Path.Combine("C:\Users\arnomatz\Documents", benutzer & ".pwd")
+        Dim filePath As String = IO.Path.Combine("Neu", benutzer & ".pwd")
         Dim ausgelesenerText As String
         Dim encryptedBytes As Byte()
 
