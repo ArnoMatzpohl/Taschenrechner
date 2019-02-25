@@ -1,22 +1,12 @@
 ﻿Public Class PasswortForm
 
-
-
-
     Sub AssertAreEqual(actual As Integer, expected As Integer)
         If actual <> expected Then
             Throw New InvalidOperationException("actual does not equal expected")
         End If
     End Sub
 
-
-
-
-
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-
 
         ' AssertAreEqual(GenerierePasswort(10).Length, 10)
         ' AssertAreEqual(GenerierePasswort(15).Length, 15)
@@ -25,14 +15,11 @@
         Dim Baum As String
         Dim Auto As String
 
-
         Haus = "Hallo"
         Baum = "Welt"
 
         Auto = Haus & "!" & Baum
         Auto = Auto & "!"
-
-        Dim Schleife As Integer
 
         Dim RandomZahl1 As New Random()
 
@@ -49,11 +36,7 @@
             'For Schleife2 As Long = 1 To Long.MaxValue
             Dim Zahl1 As Integer = RandomZahl1.Next(65, 91)
 
-
-
             Text = Chr(Zahl1)
-
-
 
             RandomZahl = RandomZahl1.Next(1, 3)
 
@@ -67,8 +50,6 @@
 
             ' For SchleifeZahlen As Integer = 0 To 15
 
-
-
             Dim SymboleRandom As Integer = RandomZahl1.Next(36, 39)
 
             Symbol1 = Chr(SymboleRandom)
@@ -76,8 +57,6 @@
             Dim SymboleRandom2 As Integer = RandomZahl1.Next(40, 44)
 
             Symbol2 = Chr(SymboleRandom)
-
-
 
             'TextBox1.Text = TextBox1.Text & Zahl2
 
@@ -93,10 +72,6 @@
 
             'End Select
 
-
-
-
-
             Dim RandomZahl2 As Integer = RandomZahl1.Next(1, 3)
             'es soll entweder eine Zahl oder ein buchstabe ausgewählt werden und in die texbox eingefügt werden 
             If RandomZahl2 = 1 Then
@@ -105,10 +80,7 @@
                 TextBox1.Text = TextBox1.Text & Text & Symbol2
             End If
 
-
-
         Next
-
 
     End Sub
 
@@ -120,27 +92,16 @@
 
         Dim Passwort As String = TextBox1.Text
 
-
-
         Return Passwort
     End Function
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
-
-
-
-
-
         'Texbox 3 zum Verwendungszweck und Textbox4 die Speicherliste
         Dim NeueZeile As String 'vb "vbCrLf"
         Dim Verwendungszweck As String = TextBox3.Text
 
-
         'For SchleifeSpeichern As Integer = 0 To 10
-
-
-
 
         'TextBox2.Text = TextBox3.Text & ": " & TextBox1.Text
 
@@ -150,27 +111,58 @@
 
             NeueZeile = vbCrLf
 
-
             TextBox2.Text = TextBox2.Text & Verwendungszweck & ": " & TextBox1.Text & NeueZeile
 
+            FileIO.FileSystem.WriteAllText("Testdatei.txt", vbCrLf, True)
 
             Dim benutzer As String = CurrentData.UserName
             Dim passwort As String = CurrentData.Password
             Dim encrypted As Byte() = CurrentData.Encrypt(TextBox2.Text, passwort)
 
-            FileIO.FileSystem.WriteAllText("Neu", vbCrLf, True)
+            'FileIO.FileSystem.WriteAllText("Neu", vbCrLf, True)
 
             'FileIO.FileSystem.WriteAllBytes(IO.Path.Combine("Neu", benutzer & ".pwd"), encrypted, False)
         End If
 
-
-        'FileIO.FileSystem.WriteAllText("C:\Users\arnomatz\Documents\GepeichertePasswörter.txt", TextBox2.Text, False)
-
-        ' Next
-
     End Sub
 
+    Sub BeispielFürVerschlüsselung()
+        Dim Dateiname As String = "Testdatei.txt"
+        Dim Passwort As String = FileIO.FileSystem.ReadAllText("Testdatei.txt")
+        Dim VerschlüsselteBytes As Byte()
+        Dim Entschlüsselt As String
+        Dim WiederVerschlüsselteBytes As Byte()
+
+        'datei einlesen
+        If FileIO.FileSystem.FileExists(Dateiname) Then
+            VerschlüsselteBytes = FileIO.FileSystem.ReadAllBytes(Dateiname)
+
+            'inhalt entschlüsseln
+            Entschlüsselt = CurrentData.Decrypt(VerschlüsselteBytes, Passwort)
+        Else
+            Entschlüsselt = "Textdatei.txt"  'erstmal steht kein inhalt drin
+        End If
+
+        'neuen inhalt zuweisen (alter inhalt + neue zeile + neuen inhalt)
+        Entschlüsselt = Entschlüsselt & vbCrLf & TextBox2.Text
+
+        'inhalt verschlüsseln
+        WiederVerschlüsselteBytes = CurrentData.Encrypt(Entschlüsselt, Passwort)
+
+        'neuen verschlüsselten inhalt wieder schreiben (kein append = true, sondern False, da wir den Inhalt komplett neu schreibne wollen)
+        FileIO.FileSystem.WriteAllBytes(Dateiname, WiederVerschlüsselteBytes, False)
+
+        TextBox2.Text = Entschlüsselt
+
+    End Sub
+    'FileIO.FileSystem.WriteAllText("C:\Users\arnomatz\Documents\GepeichertePasswörter.txt", TextBox2.Text, False)
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        BeispielFürVerschlüsselung()
+
+
+
         'Dim eingebenesPasswort As String
 
         'Do
@@ -201,6 +193,12 @@
 
         ' Dim ausgelesenerText As String = FileIO.FileSystem.ReadAllText("C:\Users\arnomatz\Documents\GepeichertePasswörter.txt")
 
+        'TextBox2.Text = FileIO.FileSystem.ReadAllText("Neu")
+
+
+
+
+
 
         Dim benutzer As String = CurrentData.UserName
         Dim passwort As String = CurrentData.Password
@@ -208,8 +206,11 @@
         Dim ausgelesenerText As String
         Dim encryptedBytes As Byte()
 
+        Debug.WriteLine(filePath)
+
         If FileIO.FileSystem.FileExists(filePath) Then
             encryptedBytes = FileIO.FileSystem.ReadAllBytes(filePath)
+            Debug.WriteLine("Datei existiert")
 
             Try
                 ausgelesenerText = CurrentData.Decrypt(encryptedBytes, passwort)
@@ -218,6 +219,8 @@
                 MessageBox.Show("Falsches Passwort oder Datei beschädigt!")
                 Environment.Exit(0)
             End Try
+        Else
+            Debug.WriteLine("Datei existiert nict!!!")
         End If
 
 

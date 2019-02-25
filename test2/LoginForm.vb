@@ -2,6 +2,79 @@
 'Die "Class" Mit den Namen Loginform wird Definiert
 Public Class LoginForm
 
+    Sub Testkrempel()
+        'schritt 1: Datei Login.txt einlesen und der Variable "LoginInhalt" zuweisen
+        'schritt 2: Benutzerdatei für Benutzer "A" schreiben mit dem Inhalt "VerwendungszweckA Passwort"
+        'schritt 3: benutzerdatei für Benutzer "A" laden und der Variable "BenutzerDateiA" zuweisen
+        'schritt 4: Benutzerdatei für Benutzer "B" schreiben mit dem Inhalt "VerwendungszweckB Passwort"
+        'schritt 5: benutzerdatei für Benutzer "B" laden und der Variable "BenutzerDateiB" zuweisen
+
+        Dim LoginInhalt As String = FileIO.FileSystem.ReadAllText("Login.txt")
+        Dim BenutzerDateiA As String
+        Dim BenutzerDateiB As String
+
+        FileIO.FileSystem.WriteAllText("DateiFürBenutzerA", "VerwendungszweckA Passwort", True)
+        BenutzerDateiA = FileIO.FileSystem.ReadAllText("DateiFürBenutzerA")
+
+        FileIO.FileSystem.WriteAllText("DateiFürBenutzerB", "VerwendungszweckB Passwort", True)
+        BenutzerDateiB = FileIO.FileSystem.ReadAllText("DateiFürBenutzerB")
+
+
+
+    End Sub
+
+    Sub BeispielFürVerschlüsselung()
+        Dim Dateiname As String = "Testdatei.txt"
+        Dim Passwort As String = "mein geheimes PAsswort"
+        Dim VerschlüsselteBytes As Byte()
+        Dim Entschlüsselt As String
+        Dim WiederVerschlüsselteBytes As Byte()
+
+        'datei einlesen
+        If FileIO.FileSystem.FileExists(Dateiname) Then
+            VerschlüsselteBytes = FileIO.FileSystem.ReadAllBytes(Dateiname)
+
+            'inhalt entschlüsseln
+            Entschlüsselt = CurrentData.Decrypt(VerschlüsselteBytes, Passwort)
+        Else
+            Entschlüsselt = "" 'erstmal steht kein inhalt drin
+        End If
+
+        'neuen inhalt zuweisen (alter inhalt + neue zeile + neuen inhalt)
+        Entschlüsselt = Entschlüsselt & vbCrLf & "neues: Passwort"
+
+        'inhalt verschlüsseln
+        WiederVerschlüsselteBytes = CurrentData.Encrypt(Entschlüsselt, Passwort)
+
+        'neuen verschlüsselten inhalt wieder schreiben (kein append = true, sondern False, da wir den Inhalt komplett neu schreibne wollen)
+        FileIO.FileSystem.WriteAllBytes(Dateiname, WiederVerschlüsselteBytes, False)
+
+    End Sub
+
+    Sub TestKrempel2()
+        'schritt 1: Datei Login.txt einlesen und der Variable "LoginInhalt" zuweisen
+        'schritt 2: Benutzerdatei für Benutzer "A" schreiben mit dem Inhalt "VerwendungszweckA Passwort"
+        'schritt 3: benutzerdatei für Benutzer "A" laden und der Variable "BenutzerDateiA" zuweisen
+        'schritt 4: Benutzerdatei für Benutzer "B" schreiben mit dem Inhalt "VerwendungszweckB Passwort"
+        'schritt 5: benutzerdatei für Benutzer "B" laden und der Variable "BenutzerDateiB" zuweisen
+
+        Dim LoginInhalt As String = FileIO.FileSystem.ReadAllText("Login.txt")
+        Dim DteiVorzeichenFürBenutzerDatei As String = "DateiFürBenutzer"
+        Dim BenutzerNameA As String = "A"
+        Dim BenutzerNameB As String = "B"
+        Dim BenutzerDateiA As String
+        Dim BenutzerDateiB As String
+        'Dim Dateiname As String = DteiVorzeichenFürBenutzerDatei & BenutzerNameA
+        'DateiFürBenutzerA
+        FileIO.FileSystem.WriteAllText(DteiVorzeichenFürBenutzerDatei & BenutzerNameA & ".verschlüsselt", LoginInhalt, True)
+        BenutzerDateiA = FileIO.FileSystem.ReadAllText(BenutzerNameA)
+
+        'DateiFürBenutzerB
+        FileIO.FileSystem.WriteAllText(DteiVorzeichenFürBenutzerDatei & BenutzerNameB & ".verschlüsselt", LoginInhalt, True)
+        BenutzerDateiB = FileIO.FileSystem.ReadAllText(BenutzerNameB)
+
+    End Sub
+
     Public Sub TextVerschlüsselung()
         Dim password As String = "password"
         Dim secretText As String = "Das darfst net lesen"
@@ -17,7 +90,8 @@ Public Class LoginForm
 
     'Die Funktion mit den Namen "Form1_Loader" Wird Difiniert 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        'BeispielFürVerschlüsselung()
+        'Testkrempel()
     End Sub
 
     'Die Fuktion mit den NAmen "IstLoginGültig" wird Definiert
@@ -232,4 +306,50 @@ Public Class LoginForm
         'FileIO.FileSystem.WriteAllText("C:\Users\arnomatz\Documents\GepeichertePasswörter.txt", TextBox2.Text, False)
 
     End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+
+        MessageBox.Show("Der BESTE Browser den es gibt <3")
+    End Sub
+
+    '    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    '        MessageBox.Show("bestätigen Sie mit OK oder klicken sie auf das x")
+
+
+    '        MessageBox.Show("
+    'Herzlichen Glückwunsch, sie haben ein treffen mit dem GANZEN Schalke-Team gewonnen.
+    'Sie erhalten weitere E-Mails von uns bezüglich des treffens.
+    'Das Team freut sich auf das treffen mit ihnen.
+    '_______________
+
+    '-Kauf bestätigt-
+
+    'Vielen Dank für ihren einkauf bei store.schalke04.de!
+    'Ihr Fanartikel (SCHALKE SCHAL AUS BAUMWOLLE MIT ECHTGOLD PUNKTEN/ 
+    'Preis 150,00,-)
+    'wird so schnell wie möglich geliefert.
+    'Da sie Haben den Premium Versand gewählt haben mussten wir ihnen die kosten
+    'auf die Rechnung schreiben.
+    'Der Kerosin Preis Beträgt zur zeit den Versands: 1.57,- pro Liter.
+    'Es Werden 24.274 Liter Kerosin für den Flug benötigt.
+    'Der Premiumversand kostet 38.110,18,- .
+    'Vielen Dank für Ihr Verständnis.
+
+    'Rechnung:
+
+    '       (SCHALKE SCHAL MIT PUNKTEN                    150,00,-
+    '        Premiumversand                                          38.110,18,-
+
+    '        Endpreis:                                                        38.260,18,-
+
+
+    'Mit Sportlichen Grüßen, ihr:
+
+    'store.schalke04.de Team")
+
+
+
+
+    '    End Sub
 End Class

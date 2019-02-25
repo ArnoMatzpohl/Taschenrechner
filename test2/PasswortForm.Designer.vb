@@ -155,7 +155,7 @@ Partial Class PasswortForm
         Me.PictureBox4.TabIndex = 17
         Me.PictureBox4.TabStop = False
         '
-        'Form1
+        'PasswortForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -177,7 +177,7 @@ Partial Class PasswortForm
         Me.Controls.Add(Me.Button1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.Name = "Form1"
+        Me.Name = "PasswortForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Passwort-Generator"
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()

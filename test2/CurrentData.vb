@@ -5,6 +5,10 @@ Public Class CurrentData
     Public Shared Property UserName As String
     Public Shared Property Password As String
 
+
+    ''' <summary>
+    ''' Verschlüsselt den übergebenen Wert mit dem angegebenes Passwort.
+    ''' </summary>
     Public Shared Function Encrypt(value As String, password As String) As Byte()
         Dim byteDeriver As New Rfc2898DeriveBytes(password, Sha256(password))
         Dim aes As New AesManaged
@@ -23,6 +27,9 @@ Public Class CurrentData
         End Using
     End Function
 
+    ''' <summary>
+    ''' Entschlüsselt Bytes() mit Hilfe des übergebenes Passworts.
+    ''' </summary>
     Public Shared Function Decrypt(value As Byte(), password As String) As String
         Dim byteDeriver As New Rfc2898DeriveBytes(password, Sha256(password))
         Dim aes As New AesManaged
