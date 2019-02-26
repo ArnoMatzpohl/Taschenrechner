@@ -26,7 +26,7 @@
         Randomize()
         PasswortBox.Clear()
 
-        For Hauptschleife As Integer = 1 To 20
+        For Hauptschleife As Integer = 1 To Länge.Value
 
             Dim Zahl2 As Integer
             Dim RandomZahl As Integer
@@ -35,6 +35,8 @@
             Dim Symbol2 As String
             'For Schleife2 As Long = 1 To Long.MaxValue
             Dim Zahl1 As Integer = RandomZahl1.Next(65, 91)
+
+            Zahl2 = RandomZahl1.Next(0, 10)
 
             Text = Chr(Zahl1)
 
@@ -50,13 +52,21 @@
 
             ' For SchleifeZahlen As Integer = 0 To 15
 
-            Dim SymboleRandom As Integer = RandomZahl1.Next(36, 39)
+            Dim SymboleRandom As Integer = RandomZahl1.Next(33, 38)
+
+            Do While SymboleRandom = 35 Or SymboleRandom = 39
+                SymboleRandom = RandomZahl1.Next(33, 38)
+            Loop
 
             Symbol1 = Chr(SymboleRandom)
 
-            Dim SymboleRandom2 As Integer = RandomZahl1.Next(40, 44)
+            Dim SymboleRandom2 As Integer = RandomZahl1.Next(40, 64)
 
-            Symbol2 = Chr(SymboleRandom)
+            Do While SymboleRandom2 = 35 Or SymboleRandom2 = 39 'Or SymboleRandom2 = 57 Or SymboleRandom2 = 56 Or SymboleRandom2 = 55 Or SymboleRandom2 = 54 Or SymboleRandom2 = 53 Or SymboleRandom2 = 52 Or SymboleRandom2 = 51 Or SymboleRandom2 = 50 Or SymboleRandom2 = 49 Or SymboleRandom2 = 48
+                SymboleRandom = RandomZahl1.Next(40, 64)
+            Loop
+
+            Symbol2 = Chr(SymboleRandom2)
 
             'TextBox1.Text = TextBox1.Text & Zahl2
 
@@ -72,13 +82,30 @@
 
             'End Select
 
-            Dim RandomZahl2 As Integer = RandomZahl1.Next(1, 3)
-            'es soll entweder eine Zahl oder ein buchstabe ausgewählt werden und in die texbox eingefügt werden 
-            If RandomZahl2 = 1 Then
-                PasswortBox.Text = PasswortBox.Text & Zahl2 & Symbol1
-            Else
-                PasswortBox.Text = PasswortBox.Text & Text & Symbol2
+            If Länge.Value > 70 Then
+                MessageBox.Show("Das Passwort darf nicht über 70 Zeichen sein!")
+                Exit Sub
             End If
+
+            Dim RandomZahl2 As Integer = RandomZahl1.Next(1, 5)
+            'es soll entweder eine Zahl oder ein buchstabe ausgewählt werden und in die texbox eingefügt werden 
+
+            Select Case RandomZahl2
+                Case 1
+                    PasswortBox.Text = PasswortBox.Text & Zahl2
+                Case 2
+                    PasswortBox.Text = PasswortBox.Text & Text
+                Case 3
+                    PasswortBox.Text = PasswortBox.Text & Symbol1
+                Case 4
+                    PasswortBox.Text = PasswortBox.Text & Symbol2
+            End Select
+
+            'If RandomZahl2 = 1 Then
+            '    PasswortBox.Text = PasswortBox.Text & Zahl2 & Symbol1
+            'Else
+            '    PasswortBox.Text = PasswortBox.Text & Text & Symbol2
+            'End If
 
         Next
 
@@ -96,6 +123,11 @@
     End Function
 
     Private Sub SpeichernButton_Click(sender As Object, e As EventArgs) Handles SpeichernButton.Click
+
+        If PasswortBox.Text = "" Then
+            MessageBox.Show("Es wurde kein Passwort erkannt!")
+            Exit Sub
+        End If
 
         'Texbox 3 zum Verwendungszweck und Textbox4 die Speicherliste
         Dim NeueZeile As String 'vb "vbCrLf"
@@ -249,4 +281,5 @@
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
         Process.Start("https://www.tagesspiegel.de/images/neuland4_nerdcore/8376588/3-format3001.jpg")
     End Sub
+
 End Class

@@ -206,29 +206,35 @@ Public Class LoginForm
                 Exit Sub
             End If
 
-            If PasswortBox.Text = BenutzerBox.Text Then
-                MessageBox.Show("Verwende ein anderes Passwort!")
-                Exit Sub
+
+            If CheckBox1.Checked Then
+
+
+
+                If PasswortBox.Text = BenutzerBox.Text Then
+                    MessageBox.Show("Verwende ein anderes Passwort!")
+                    Exit Sub
+                End If
             End If
 
             Benutzername = BenutzerBox.Text
-            Passwort = PasswortBox.Text
-            CurrentData.UserName = Benutzername
-            CurrentData.Password = Passwort
+                Passwort = PasswortBox.Text
+                CurrentData.UserName = Benutzername
+                CurrentData.Password = Passwort
 
 
 
-            'Die Funktion IstLoginGültigVonLoginDatei Wird Aufgerufen mit den Parametern Benutzername und Passwort
-            'Der Rückgabewert wird überprüft ob er Wahr ist.
-            'wenn das zutrifft Wird die Funktion PasswortForm.Show aufgerufen und Me.Hide()
+                'Die Funktion IstLoginGültigVonLoginDatei Wird Aufgerufen mit den Parametern Benutzername und Passwort
+                'Der Rückgabewert wird überprüft ob er Wahr ist.
+                'wenn das zutrifft Wird die Funktion PasswortForm.Show aufgerufen und Me.Hide()
 
-            If IstLoginGültigVonLoginDatei(Benutzername, Passwort) = True Then
-                PasswortForm.Show()
-                Me.Hide()
-            Else
-                MessageBox.Show("Der Benutzernahme oder das Passwort ist falsch!")
+                If IstLoginGültigVonLoginDatei(Benutzername, Passwort) = True Then
+                    PasswortForm.Show()
+                    Me.Hide()
+                Else
+                    MessageBox.Show("Der Benutzernahme oder das Passwort ist falsch!")
+                End If
             End If
-        End If
 
 
 
