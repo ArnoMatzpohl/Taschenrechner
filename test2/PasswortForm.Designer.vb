@@ -127,6 +127,7 @@ Partial Class PasswortForm
         '
         'PictureBox2
         '
+        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(345, 186)
         Me.PictureBox2.Name = "PictureBox2"
@@ -137,6 +138,7 @@ Partial Class PasswortForm
         '
         'PictureBox3
         '
+        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.Location = New System.Drawing.Point(345, 238)
         Me.PictureBox3.Name = "PictureBox3"
@@ -147,6 +149,7 @@ Partial Class PasswortForm
         '
         'PictureBox4
         '
+        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
         Me.PictureBox4.Location = New System.Drawing.Point(345, 277)
         Me.PictureBox4.Name = "PictureBox4"

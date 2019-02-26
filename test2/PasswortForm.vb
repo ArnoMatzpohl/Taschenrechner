@@ -234,5 +234,19 @@
         Environment.Exit(0)
     End Sub
 
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        Process.Start("http://www.enmanosdenadie.com.ar/wp-content/uploads/2009/11/ie-trash.png")
+    End Sub
 
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Process.Start("https://www.upguard.com/hs-fs/hubfs/UpGuard/blogimages/flashisbad.png?width=691&name=flashisbad.png")
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Process.Start("https://techboomers.com/wp-content/uploads/2018/07/facebook-in-trash-1.png")
+    End Sub
+
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        Process.Start("https://www.tagesspiegel.de/images/neuland4_nerdcore/8376588/3-format3001.jpg")
+    End Sub
 End Class

@@ -174,8 +174,7 @@ Public Class LoginForm
 
         'Mein Ziel:  Wenn die Check box ausgewählt ist dann soll das program ein Neues konto Anlegen. Ansonsten Soll es so sein wie vorher 
 
-        Dim Benutzername As String
-        Dim Passwort As String
+
 
         If BenutzerBox.Text = "" Or PasswortBox.Text = "" Then
             MessageBox.Show("Gebe einen Benutzername und ein Passwort ein!")
@@ -194,7 +193,23 @@ Public Class LoginForm
 
             End If
 
+            Dim Benutzername As String
+            Dim Passwort As String
 
+            If BenutzerBox.Text.Length < 3 Then
+                MessageBox.Show("Bitte verwende einen Benutzernamen mit mindestens 3 Zeichen!")
+                Exit Sub
+            End If
+
+            If PasswortBox.Text.Length < 6 Then
+                MessageBox.Show("Das Passwort muss mindestens 6 Zeichen enthalten!")
+                Exit Sub
+            End If
+
+            If PasswortBox.Text = BenutzerBox.Text Then
+                MessageBox.Show("Verwende ein anderes Passwort!")
+                Exit Sub
+            End If
 
             Benutzername = BenutzerBox.Text
             Passwort = PasswortBox.Text
@@ -309,8 +324,10 @@ Public Class LoginForm
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
 
-        MessageBox.Show("Der BESTE Browser den es gibt <3")
+        MessageBox.Show("Das BESTE Browser <3")
     End Sub
+
+
 
     '    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
 

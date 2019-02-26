@@ -148,9 +148,9 @@ Partial Class LoginForm
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(84, 2)
+        Me.PictureBox1.Location = New System.Drawing.Point(99, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(79, 72)
+        Me.PictureBox1.Size = New System.Drawing.Size(62, 59)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 23
         Me.PictureBox1.TabStop = False
@@ -163,7 +163,6 @@ Partial Class LoginForm
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ClientSize = New System.Drawing.Size(262, 257)
         Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox5)
@@ -174,6 +173,7 @@ Partial Class LoginForm
         Me.Controls.Add(Me.PasswortBox)
         Me.Controls.Add(Me.BenutzerBox)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.PictureBox3)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "LoginForm"
