@@ -143,7 +143,7 @@
 
         Else
             NeueZeile = vbCrLf
-            GepeichertePasswörterBox.Text = GepeichertePasswörterBox.Text & Verwendungszweck & ": " & PasswortBox.Text & NeueZeile
+            GepeichertePasswörterBox.Text = GepeichertePasswörterBox.Text & Verwendungszweck & "= " & PasswortBox.Text & NeueZeile
 
             Dim benutzer As String = CurrentData.UserName
             Dim passwort As String = CurrentData.Password

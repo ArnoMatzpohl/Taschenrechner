@@ -171,9 +171,9 @@ Partial Class PasswortForm
         Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label4.Location = New System.Drawing.Point(12, 10)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
+        Me.Label4.Size = New System.Drawing.Size(86, 13)
         Me.Label4.TabIndex = 18
-        Me.Label4.Text = "Länge:"
+        Me.Label4.Text = "Länge (max. 70):"
         '
         'Länge
         '
@@ -186,9 +186,9 @@ Partial Class PasswortForm
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(153, -296)
+        Me.PictureBox1.Location = New System.Drawing.Point(171, -154)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(422, 355)
+        Me.PictureBox1.Size = New System.Drawing.Size(283, 211)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 20
         Me.PictureBox1.TabStop = False

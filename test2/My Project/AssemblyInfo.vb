@@ -1,4 +1,5 @@
-﻿Imports System
+﻿Imports System.Resources
+Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
@@ -8,10 +9,10 @@ Imports System.Runtime.InteropServices
 
 ' Werte der Assemblyattribute überprüfen
 
-<Assembly: AssemblyTitle("test2")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyTitle("Passwort-Generator")>
+<Assembly: AssemblyDescription("Einer der sichersten Passwortgeneratorn 2019!")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("test2")>
+<Assembly: AssemblyProduct("Passwort-Generator")>
 <Assembly: AssemblyCopyright("Copyright ©  2019")>
 <Assembly: AssemblyTrademark("")>
 
@@ -31,5 +32,6 @@ Imports System.Runtime.InteropServices
 ' übernehmen, indem Sie "*" eingeben:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: AssemblyVersion("4.2.1.0")>
+<Assembly: AssemblyFileVersion("4.2.1.0")>
+<Assembly: NeutralResourcesLanguage("de-DE")>
