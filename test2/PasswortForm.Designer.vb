@@ -23,11 +23,11 @@ Partial Class PasswortForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PasswortForm))
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.NeuesPasswortGenerierenButton = New System.Windows.Forms.Button()
+        Me.PasswortBox = New System.Windows.Forms.TextBox()
+        Me.GepeichertePasswörterBox = New System.Windows.Forms.TextBox()
+        Me.SpeichernButton = New System.Windows.Forms.Button()
+        Me.VerwendungsBox = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -41,49 +41,49 @@ Partial Class PasswortForm
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button1
+        'NeuesPasswortGenerierenButton
         '
-        Me.Button1.Location = New System.Drawing.Point(323, 21)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(105, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Neues Paswort"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.NeuesPasswortGenerierenButton.Location = New System.Drawing.Point(323, 21)
+        Me.NeuesPasswortGenerierenButton.Name = "NeuesPasswortGenerierenButton"
+        Me.NeuesPasswortGenerierenButton.Size = New System.Drawing.Size(105, 23)
+        Me.NeuesPasswortGenerierenButton.TabIndex = 1
+        Me.NeuesPasswortGenerierenButton.Text = "Neues Paswort"
+        Me.NeuesPasswortGenerierenButton.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'PasswortBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 23)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(305, 20)
-        Me.TextBox1.TabIndex = 3
+        Me.PasswortBox.Location = New System.Drawing.Point(12, 23)
+        Me.PasswortBox.Name = "PasswortBox"
+        Me.PasswortBox.ReadOnly = True
+        Me.PasswortBox.Size = New System.Drawing.Size(305, 20)
+        Me.PasswortBox.TabIndex = 3
         '
-        'TextBox2
+        'GepeichertePasswörterBox
         '
-        Me.TextBox2.AcceptsReturn = True
-        Me.TextBox2.Location = New System.Drawing.Point(12, 105)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(305, 270)
-        Me.TextBox2.TabIndex = 4
+        Me.GepeichertePasswörterBox.AcceptsReturn = True
+        Me.GepeichertePasswörterBox.Location = New System.Drawing.Point(12, 105)
+        Me.GepeichertePasswörterBox.Multiline = True
+        Me.GepeichertePasswörterBox.Name = "GepeichertePasswörterBox"
+        Me.GepeichertePasswörterBox.ReadOnly = True
+        Me.GepeichertePasswörterBox.Size = New System.Drawing.Size(305, 270)
+        Me.GepeichertePasswörterBox.TabIndex = 4
         '
-        'Button2
+        'SpeichernButton
         '
-        Me.Button2.AccessibleRole = System.Windows.Forms.AccessibleRole.ToolTip
-        Me.Button2.Location = New System.Drawing.Point(323, 60)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(105, 23)
-        Me.Button2.TabIndex = 5
-        Me.Button2.Text = "Speichern"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.SpeichernButton.AccessibleRole = System.Windows.Forms.AccessibleRole.ToolTip
+        Me.SpeichernButton.Location = New System.Drawing.Point(323, 60)
+        Me.SpeichernButton.Name = "SpeichernButton"
+        Me.SpeichernButton.Size = New System.Drawing.Size(105, 23)
+        Me.SpeichernButton.TabIndex = 5
+        Me.SpeichernButton.Text = "Speichern"
+        Me.SpeichernButton.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'VerwendungsBox
         '
-        Me.TextBox3.Location = New System.Drawing.Point(12, 62)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(305, 20)
-        Me.TextBox3.TabIndex = 6
+        Me.VerwendungsBox.Location = New System.Drawing.Point(12, 62)
+        Me.VerwendungsBox.Name = "VerwendungsBox"
+        Me.VerwendungsBox.Size = New System.Drawing.Size(305, 20)
+        Me.VerwendungsBox.TabIndex = 6
         '
         'Label1
         '
@@ -170,11 +170,11 @@ Partial Class PasswortForm
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.VerwendungsBox)
+        Me.Controls.Add(Me.SpeichernButton)
+        Me.Controls.Add(Me.GepeichertePasswörterBox)
+        Me.Controls.Add(Me.PasswortBox)
+        Me.Controls.Add(Me.NeuesPasswortGenerierenButton)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "PasswortForm"
@@ -189,11 +189,11 @@ Partial Class PasswortForm
 
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents NeuesPasswortGenerierenButton As Button
+    Friend WithEvents PasswortBox As TextBox
+    Friend WithEvents GepeichertePasswörterBox As TextBox
+    Friend WithEvents SpeichernButton As Button
+    Friend WithEvents VerwendungsBox As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
