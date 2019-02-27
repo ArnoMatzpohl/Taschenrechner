@@ -330,7 +330,15 @@ Public Class LoginForm
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
 
-        MessageBox.Show("Das BESTE Browser <3")
+        Dim SchleifeBrowser As Integer
+
+        For SchleifeBrowser = 1 To 10
+            MessageBox.Show("
+    -GESTORBEN-
+")
+
+        Next
+
     End Sub
 
 

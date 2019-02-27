@@ -124,6 +124,7 @@ Partial Class PasswortForm
         '
         'PictureBox5
         '
+        Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
         Me.PictureBox5.Location = New System.Drawing.Point(345, 176)
         Me.PictureBox5.Name = "PictureBox5"
@@ -160,7 +161,7 @@ Partial Class PasswortForm
         Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
         Me.PictureBox4.Location = New System.Drawing.Point(345, 319)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(68, 63)
+        Me.PictureBox4.Size = New System.Drawing.Size(68, 70)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 17
         Me.PictureBox4.TabStop = False
@@ -186,9 +187,9 @@ Partial Class PasswortForm
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(171, -154)
+        Me.PictureBox1.Location = New System.Drawing.Point(244, -10)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(283, 211)
+        Me.PictureBox1.Size = New System.Drawing.Size(169, 96)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 20
         Me.PictureBox1.TabStop = False
@@ -201,8 +202,10 @@ Partial Class PasswortForm
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ClientSize = New System.Drawing.Size(448, 429)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Länge)
+        Me.Controls.Add(Me.PasswortBox)
+        Me.Controls.Add(Me.NeuesPasswortGenerierenButton)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox4)
@@ -214,8 +217,6 @@ Partial Class PasswortForm
         Me.Controls.Add(Me.VerwendungsBox)
         Me.Controls.Add(Me.SpeichernButton)
         Me.Controls.Add(Me.GepeichertePasswörterBox)
-        Me.Controls.Add(Me.PasswortBox)
-        Me.Controls.Add(Me.NeuesPasswortGenerierenButton)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "PasswortForm"
