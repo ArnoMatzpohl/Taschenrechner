@@ -28,18 +28,18 @@ Partial Class Form1
         Me.Zählerbox = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.BeschreibungFabrik3Label = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.KostenChormeLabel = New System.Windows.Forms.Label()
-        Me.KaufenFabrikBobButton = New System.Windows.Forms.Button()
+        Me.KostenFabrik3Label = New System.Windows.Forms.Label()
+        Me.Fabrik3KaufenButton = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.KaufenBobButton = New System.Windows.Forms.Button()
         Me.BobPreisLabel = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.levelFabrik2Label = New System.Windows.Forms.Label()
+        Me.Fabrik3LevelLabel = New System.Windows.Forms.Label()
         Me.BobLevelLabel = New System.Windows.Forms.Label()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
@@ -53,7 +53,6 @@ Partial Class Form1
         Me.KastenFabrik1Label = New System.Windows.Forms.Label()
         Me.PictureBox13 = New System.Windows.Forms.PictureBox()
         Me.BeschreibungFabrik1Label = New System.Windows.Forms.Label()
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Fabrik1Button = New System.Windows.Forms.Button()
         Me.DrückerKaufenButton = New System.Windows.Forms.Button()
         Me.DrückerLevelLabel = New System.Windows.Forms.Label()
@@ -61,15 +60,28 @@ Partial Class Form1
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.DrückerBeschreibungLabel = New System.Windows.Forms.Label()
         Me.PictureBox14 = New System.Windows.Forms.PictureBox()
-        Me.LevelFabrik3Label = New System.Windows.Forms.Label()
-        Me.KaufenFabrik3Button = New System.Windows.Forms.Button()
-        Me.KosenFabrik3Label = New System.Windows.Forms.Label()
+        Me.Fabrik2LevelLabel = New System.Windows.Forms.Label()
+        Me.KaufenFabrik2Button = New System.Windows.Forms.Button()
+        Me.KosenFabrik2Label = New System.Windows.Forms.Label()
         Me.PictureBox15 = New System.Windows.Forms.PictureBox()
-        Me.BeschreibungFabrik3Label = New System.Windows.Forms.Label()
+        Me.BeschreibungFabrik2Label = New System.Windows.Forms.Label()
         Me.PictureBox16 = New System.Windows.Forms.PictureBox()
         Me.PictureBox17 = New System.Windows.Forms.PictureBox()
         Me.PictureBox18 = New System.Windows.Forms.PictureBox()
-        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.WahrscheinlichkeitKapputBox = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.GeldProSekundebox = New System.Windows.Forms.TextBox()
+        Me.PictureBox19 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox20 = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.KostenReperateurLabel = New System.Windows.Forms.Label()
+        Me.UpgradeReperateurButton = New System.Windows.Forms.Button()
+        Me.LevelReperateurLabel = New System.Windows.Forms.Label()
+        Me.PictureBox21 = New System.Windows.Forms.PictureBox()
+        Me.NachichtTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.NachichtPictureBox = New System.Windows.Forms.PictureBox()
+        Me.SpielNeuStartenButton = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,6 +100,10 @@ Partial Class Form1
         CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NachichtPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -129,14 +145,14 @@ Partial Class Form1
         Me.PictureBox2.TabIndex = 3
         Me.PictureBox2.TabStop = False
         '
-        'Label2
+        'BeschreibungFabrik3Label
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(830, 415)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(178, 13)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "- Generiert 2 $ pro sek. automatisch!"
+        Me.BeschreibungFabrik3Label.AutoSize = True
+        Me.BeschreibungFabrik3Label.Location = New System.Drawing.Point(830, 415)
+        Me.BeschreibungFabrik3Label.Name = "BeschreibungFabrik3Label"
+        Me.BeschreibungFabrik3Label.Size = New System.Drawing.Size(178, 13)
+        Me.BeschreibungFabrik3Label.TabIndex = 4
+        Me.BeschreibungFabrik3Label.Text = "- Generiert 2 $ pro sek. automatisch!"
         '
         'PictureBox3
         '
@@ -158,26 +174,26 @@ Partial Class Form1
         Me.PictureBox4.TabIndex = 6
         Me.PictureBox4.TabStop = False
         '
-        'KostenChormeLabel
+        'KostenFabrik3Label
         '
-        Me.KostenChormeLabel.AutoSize = True
-        Me.KostenChormeLabel.Location = New System.Drawing.Point(831, 432)
-        Me.KostenChormeLabel.Name = "KostenChormeLabel"
-        Me.KostenChormeLabel.Size = New System.Drawing.Size(79, 13)
-        Me.KostenChormeLabel.TabIndex = 7
-        Me.KostenChormeLabel.Text = "- Kostet: 1000$"
+        Me.KostenFabrik3Label.AutoSize = True
+        Me.KostenFabrik3Label.Location = New System.Drawing.Point(831, 432)
+        Me.KostenFabrik3Label.Name = "KostenFabrik3Label"
+        Me.KostenFabrik3Label.Size = New System.Drawing.Size(79, 13)
+        Me.KostenFabrik3Label.TabIndex = 7
+        Me.KostenFabrik3Label.Text = "- Kostet: 1000$"
         '
-        'KaufenFabrikBobButton
+        'Fabrik3KaufenButton
         '
-        Me.KaufenFabrikBobButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.KaufenFabrikBobButton.Enabled = False
-        Me.KaufenFabrikBobButton.ForeColor = System.Drawing.Color.Black
-        Me.KaufenFabrikBobButton.Location = New System.Drawing.Point(833, 448)
-        Me.KaufenFabrikBobButton.Name = "KaufenFabrikBobButton"
-        Me.KaufenFabrikBobButton.Size = New System.Drawing.Size(75, 23)
-        Me.KaufenFabrikBobButton.TabIndex = 8
-        Me.KaufenFabrikBobButton.Text = "Kaufen"
-        Me.KaufenFabrikBobButton.UseVisualStyleBackColor = True
+        Me.Fabrik3KaufenButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Fabrik3KaufenButton.Enabled = False
+        Me.Fabrik3KaufenButton.ForeColor = System.Drawing.Color.Black
+        Me.Fabrik3KaufenButton.Location = New System.Drawing.Point(833, 448)
+        Me.Fabrik3KaufenButton.Name = "Fabrik3KaufenButton"
+        Me.Fabrik3KaufenButton.Size = New System.Drawing.Size(75, 23)
+        Me.Fabrik3KaufenButton.TabIndex = 8
+        Me.Fabrik3KaufenButton.Text = "Kaufen"
+        Me.Fabrik3KaufenButton.UseVisualStyleBackColor = True
         '
         'Timer1
         '
@@ -232,14 +248,14 @@ Partial Class Form1
         Me.Label7.TabIndex = 14
         Me.Label7.Text = "- wen die Fabrik kapputt ist kann Bob sie reparieren"
         '
-        'levelFabrik2Label
+        'Fabrik3LevelLabel
         '
-        Me.levelFabrik2Label.AutoSize = True
-        Me.levelFabrik2Label.Location = New System.Drawing.Point(758, 399)
-        Me.levelFabrik2Label.Name = "levelFabrik2Label"
-        Me.levelFabrik2Label.Size = New System.Drawing.Size(45, 13)
-        Me.levelFabrik2Label.TabIndex = 24
-        Me.levelFabrik2Label.Text = "Level: 0"
+        Me.Fabrik3LevelLabel.AutoSize = True
+        Me.Fabrik3LevelLabel.Location = New System.Drawing.Point(758, 399)
+        Me.Fabrik3LevelLabel.Name = "Fabrik3LevelLabel"
+        Me.Fabrik3LevelLabel.Size = New System.Drawing.Size(45, 13)
+        Me.Fabrik3LevelLabel.TabIndex = 24
+        Me.Fabrik3LevelLabel.Text = "Level: 0"
         '
         'BobLevelLabel
         '
@@ -318,7 +334,7 @@ Partial Class Form1
         'PictureBox7
         '
         Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(162, 601)
+        Me.PictureBox7.Location = New System.Drawing.Point(162, 599)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(277, 186)
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -362,13 +378,9 @@ Partial Class Form1
         Me.BeschreibungFabrik1Label.TabIndex = 34
         Me.BeschreibungFabrik1Label.Text = "- Generiert 1 $ pro sek. automatisch!"
         '
-        'Timer2
-        '
-        Me.Timer2.Enabled = True
-        Me.Timer2.Interval = 1000
-        '
         'Fabrik1Button
         '
+        Me.Fabrik1Button.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Fabrik1Button.Location = New System.Drawing.Point(834, 281)
         Me.Fabrik1Button.Name = "Fabrik1Button"
         Me.Fabrik1Button.Size = New System.Drawing.Size(75, 23)
@@ -433,35 +445,35 @@ Partial Class Form1
         Me.PictureBox14.TabIndex = 49
         Me.PictureBox14.TabStop = False
         '
-        'LevelFabrik3Label
+        'Fabrik2LevelLabel
         '
-        Me.LevelFabrik3Label.AutoSize = True
-        Me.LevelFabrik3Label.Location = New System.Drawing.Point(758, 316)
-        Me.LevelFabrik3Label.Name = "LevelFabrik3Label"
-        Me.LevelFabrik3Label.Size = New System.Drawing.Size(45, 13)
-        Me.LevelFabrik3Label.TabIndex = 54
-        Me.LevelFabrik3Label.Text = "Level: 0"
+        Me.Fabrik2LevelLabel.AutoSize = True
+        Me.Fabrik2LevelLabel.Location = New System.Drawing.Point(758, 316)
+        Me.Fabrik2LevelLabel.Name = "Fabrik2LevelLabel"
+        Me.Fabrik2LevelLabel.Size = New System.Drawing.Size(45, 13)
+        Me.Fabrik2LevelLabel.TabIndex = 54
+        Me.Fabrik2LevelLabel.Text = "Level: 0"
         '
-        'KaufenFabrik3Button
+        'KaufenFabrik2Button
         '
-        Me.KaufenFabrik3Button.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.KaufenFabrik3Button.Enabled = False
-        Me.KaufenFabrik3Button.ForeColor = System.Drawing.Color.Black
-        Me.KaufenFabrik3Button.Location = New System.Drawing.Point(833, 365)
-        Me.KaufenFabrik3Button.Name = "KaufenFabrik3Button"
-        Me.KaufenFabrik3Button.Size = New System.Drawing.Size(75, 23)
-        Me.KaufenFabrik3Button.TabIndex = 53
-        Me.KaufenFabrik3Button.Text = "Kaufen"
-        Me.KaufenFabrik3Button.UseVisualStyleBackColor = True
+        Me.KaufenFabrik2Button.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.KaufenFabrik2Button.Enabled = False
+        Me.KaufenFabrik2Button.ForeColor = System.Drawing.Color.Black
+        Me.KaufenFabrik2Button.Location = New System.Drawing.Point(833, 365)
+        Me.KaufenFabrik2Button.Name = "KaufenFabrik2Button"
+        Me.KaufenFabrik2Button.Size = New System.Drawing.Size(75, 23)
+        Me.KaufenFabrik2Button.TabIndex = 53
+        Me.KaufenFabrik2Button.Text = "Kaufen"
+        Me.KaufenFabrik2Button.UseVisualStyleBackColor = True
         '
-        'KosenFabrik3Label
+        'KosenFabrik2Label
         '
-        Me.KosenFabrik3Label.AutoSize = True
-        Me.KosenFabrik3Label.Location = New System.Drawing.Point(831, 349)
-        Me.KosenFabrik3Label.Name = "KosenFabrik3Label"
-        Me.KosenFabrik3Label.Size = New System.Drawing.Size(79, 13)
-        Me.KosenFabrik3Label.TabIndex = 52
-        Me.KosenFabrik3Label.Text = "- Kostet: 1000$"
+        Me.KosenFabrik2Label.AutoSize = True
+        Me.KosenFabrik2Label.Location = New System.Drawing.Point(831, 349)
+        Me.KosenFabrik2Label.Name = "KosenFabrik2Label"
+        Me.KosenFabrik2Label.Size = New System.Drawing.Size(79, 13)
+        Me.KosenFabrik2Label.TabIndex = 52
+        Me.KosenFabrik2Label.Text = "- Kostet: 1000$"
         '
         'PictureBox15
         '
@@ -473,14 +485,14 @@ Partial Class Form1
         Me.PictureBox15.TabIndex = 51
         Me.PictureBox15.TabStop = False
         '
-        'BeschreibungFabrik3Label
+        'BeschreibungFabrik2Label
         '
-        Me.BeschreibungFabrik3Label.AutoSize = True
-        Me.BeschreibungFabrik3Label.Location = New System.Drawing.Point(830, 332)
-        Me.BeschreibungFabrik3Label.Name = "BeschreibungFabrik3Label"
-        Me.BeschreibungFabrik3Label.Size = New System.Drawing.Size(178, 13)
-        Me.BeschreibungFabrik3Label.TabIndex = 50
-        Me.BeschreibungFabrik3Label.Text = "- Generiert 2 $ pro sek. automatisch!"
+        Me.BeschreibungFabrik2Label.AutoSize = True
+        Me.BeschreibungFabrik2Label.Location = New System.Drawing.Point(830, 332)
+        Me.BeschreibungFabrik2Label.Name = "BeschreibungFabrik2Label"
+        Me.BeschreibungFabrik2Label.Size = New System.Drawing.Size(178, 13)
+        Me.BeschreibungFabrik2Label.TabIndex = 50
+        Me.BeschreibungFabrik2Label.Text = "- Generiert 2 $ pro sek. automatisch!"
         '
         'PictureBox16
         '
@@ -512,63 +524,200 @@ Partial Class Form1
         Me.PictureBox18.TabIndex = 57
         Me.PictureBox18.TabStop = False
         '
-        'Timer3
+        'Label3
         '
-        Me.Timer3.Enabled = True
-        Me.Timer3.Interval = 1000
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(1192, 163)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(310, 13)
+        Me.Label3.TabIndex = 58
+        Me.Label3.Text = "Wahrscheinlichkeit das deine Fabriken aufhören zu arbeiten(%) :"
+        '
+        'WahrscheinlichkeitKapputBox
+        '
+        Me.WahrscheinlichkeitKapputBox.Location = New System.Drawing.Point(1257, 179)
+        Me.WahrscheinlichkeitKapputBox.Name = "WahrscheinlichkeitKapputBox"
+        Me.WahrscheinlichkeitKapputBox.ReadOnly = True
+        Me.WahrscheinlichkeitKapputBox.ShortcutsEnabled = False
+        Me.WahrscheinlichkeitKapputBox.Size = New System.Drawing.Size(185, 20)
+        Me.WahrscheinlichkeitKapputBox.TabIndex = 59
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(1302, 227)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(97, 13)
+        Me.Label2.TabIndex = 60
+        Me.Label2.Text = "Geld Pro Sekunde:"
+        '
+        'GeldProSekundebox
+        '
+        Me.GeldProSekundebox.Location = New System.Drawing.Point(1257, 243)
+        Me.GeldProSekundebox.Name = "GeldProSekundebox"
+        Me.GeldProSekundebox.ReadOnly = True
+        Me.GeldProSekundebox.ShortcutsEnabled = False
+        Me.GeldProSekundebox.Size = New System.Drawing.Size(185, 20)
+        Me.GeldProSekundebox.TabIndex = 61
+        '
+        'PictureBox19
+        '
+        Me.PictureBox19.Image = CType(resources.GetObject("PictureBox19.Image"), System.Drawing.Image)
+        Me.PictureBox19.Location = New System.Drawing.Point(1092, -257)
+        Me.PictureBox19.Name = "PictureBox19"
+        Me.PictureBox19.Size = New System.Drawing.Size(100, 1356)
+        Me.PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox19.TabIndex = 62
+        Me.PictureBox19.TabStop = False
+        '
+        'PictureBox20
+        '
+        Me.PictureBox20.Image = CType(resources.GetObject("PictureBox20.Image"), System.Drawing.Image)
+        Me.PictureBox20.Location = New System.Drawing.Point(762, 689)
+        Me.PictureBox20.Name = "PictureBox20"
+        Me.PictureBox20.Size = New System.Drawing.Size(47, 48)
+        Me.PictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox20.TabIndex = 63
+        Me.PictureBox20.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(827, 689)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(229, 13)
+        Me.Label4.TabIndex = 64
+        Me.Label4.Text = "Verringert die Chancen auf einen Fabriksausfall"
+        '
+        'KostenReperateurLabel
+        '
+        Me.KostenReperateurLabel.AutoSize = True
+        Me.KostenReperateurLabel.Location = New System.Drawing.Point(827, 706)
+        Me.KostenReperateurLabel.Name = "KostenReperateurLabel"
+        Me.KostenReperateurLabel.Size = New System.Drawing.Size(61, 13)
+        Me.KostenReperateurLabel.TabIndex = 65
+        Me.KostenReperateurLabel.Text = "- Kostet: 6$"
+        '
+        'UpgradeReperateurButton
+        '
+        Me.UpgradeReperateurButton.Location = New System.Drawing.Point(834, 722)
+        Me.UpgradeReperateurButton.Name = "UpgradeReperateurButton"
+        Me.UpgradeReperateurButton.Size = New System.Drawing.Size(75, 23)
+        Me.UpgradeReperateurButton.TabIndex = 66
+        Me.UpgradeReperateurButton.Text = "Upgrade"
+        Me.UpgradeReperateurButton.UseVisualStyleBackColor = True
+        '
+        'LevelReperateurLabel
+        '
+        Me.LevelReperateurLabel.AutoSize = True
+        Me.LevelReperateurLabel.Location = New System.Drawing.Point(762, 670)
+        Me.LevelReperateurLabel.Name = "LevelReperateurLabel"
+        Me.LevelReperateurLabel.Size = New System.Drawing.Size(45, 13)
+        Me.LevelReperateurLabel.TabIndex = 67
+        Me.LevelReperateurLabel.Text = "Level: 0"
+        '
+        'PictureBox21
+        '
+        Me.PictureBox21.Image = CType(resources.GetObject("PictureBox21.Image"), System.Drawing.Image)
+        Me.PictureBox21.Location = New System.Drawing.Point(1319, 53)
+        Me.PictureBox21.Name = "PictureBox21"
+        Me.PictureBox21.Size = New System.Drawing.Size(80, 82)
+        Me.PictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox21.TabIndex = 68
+        Me.PictureBox21.TabStop = False
+        '
+        'NachichtTimer
+        '
+        Me.NachichtTimer.Interval = 1000
+        '
+        'NachichtPictureBox
+        '
+        Me.NachichtPictureBox.Image = CType(resources.GetObject("NachichtPictureBox.Image"), System.Drawing.Image)
+        Me.NachichtPictureBox.Location = New System.Drawing.Point(351, 514)
+        Me.NachichtPictureBox.Name = "NachichtPictureBox"
+        Me.NachichtPictureBox.Size = New System.Drawing.Size(221, 188)
+        Me.NachichtPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.NachichtPictureBox.TabIndex = 69
+        Me.NachichtPictureBox.TabStop = False
+        '
+        'SpielNeuStartenButton
+        '
+        Me.SpielNeuStartenButton.Location = New System.Drawing.Point(938, 40)
+        Me.SpielNeuStartenButton.Name = "SpielNeuStartenButton"
+        Me.SpielNeuStartenButton.Size = New System.Drawing.Size(75, 23)
+        Me.SpielNeuStartenButton.TabIndex = 70
+        Me.SpielNeuStartenButton.Text = "Neu Starten"
+        Me.SpielNeuStartenButton.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(1636, 799)
+        Me.Controls.Add(Me.SpielNeuStartenButton)
+        Me.Controls.Add(Me.Nachichtlabel)
+        Me.Controls.Add(Me.PictureBox7)
+        Me.Controls.Add(Me.NachichtPictureBox)
+        Me.Controls.Add(Me.PictureBox21)
+        Me.Controls.Add(Me.LevelReperateurLabel)
+        Me.Controls.Add(Me.UpgradeReperateurButton)
+        Me.Controls.Add(Me.KostenReperateurLabel)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.PictureBox20)
+        Me.Controls.Add(Me.KaufenFabrik2Button)
+        Me.Controls.Add(Me.KosenFabrik2Label)
+        Me.Controls.Add(Me.BeschreibungFabrik2Label)
+        Me.Controls.Add(Me.DrückerKaufenButton)
+        Me.Controls.Add(Me.DrückerKostenLabel)
+        Me.Controls.Add(Me.DrückerBeschreibungLabel)
+        Me.Controls.Add(Me.Fabrik1Button)
+        Me.Controls.Add(Me.KastenFabrik1Label)
+        Me.Controls.Add(Me.BeschreibungFabrik1Label)
+        Me.Controls.Add(Me.reparierenButton)
+        Me.Controls.Add(Me.BobPreisLabel)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.KaufenBobButton)
+        Me.Controls.Add(Me.Fabrik3KaufenButton)
+        Me.Controls.Add(Me.KostenFabrik3Label)
+        Me.Controls.Add(Me.BeschreibungFabrik3Label)
+        Me.Controls.Add(Me.GeldProSekundebox)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.WahrscheinlichkeitKapputBox)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.PictureBox19)
         Me.Controls.Add(Me.PictureBox18)
         Me.Controls.Add(Me.PictureBox17)
         Me.Controls.Add(Me.PictureBox16)
-        Me.Controls.Add(Me.LevelFabrik3Label)
-        Me.Controls.Add(Me.KaufenFabrik3Button)
-        Me.Controls.Add(Me.KosenFabrik3Label)
+        Me.Controls.Add(Me.Fabrik2LevelLabel)
         Me.Controls.Add(Me.PictureBox15)
-        Me.Controls.Add(Me.BeschreibungFabrik3Label)
         Me.Controls.Add(Me.PictureBox14)
-        Me.Controls.Add(Me.DrückerKaufenButton)
         Me.Controls.Add(Me.DrückerLevelLabel)
-        Me.Controls.Add(Me.DrückerKostenLabel)
         Me.Controls.Add(Me.PictureBox8)
-        Me.Controls.Add(Me.DrückerBeschreibungLabel)
-        Me.Controls.Add(Me.Fabrik1Button)
         Me.Controls.Add(Me.Fabrik1LevelLabel)
-        Me.Controls.Add(Me.KastenFabrik1Label)
         Me.Controls.Add(Me.PictureBox13)
-        Me.Controls.Add(Me.BeschreibungFabrik1Label)
-        Me.Controls.Add(Me.Nachichtlabel)
-        Me.Controls.Add(Me.PictureBox7)
-        Me.Controls.Add(Me.reparierenButton)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.PictureBox12)
         Me.Controls.Add(Me.PictureBox11)
         Me.Controls.Add(Me.PictureBox10)
         Me.Controls.Add(Me.PictureBox9)
         Me.Controls.Add(Me.BobLevelLabel)
-        Me.Controls.Add(Me.levelFabrik2Label)
-        Me.Controls.Add(Me.BobPreisLabel)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.KaufenBobButton)
+        Me.Controls.Add(Me.Fabrik3LevelLabel)
         Me.Controls.Add(Me.PictureBox6)
         Me.Controls.Add(Me.PictureBox5)
-        Me.Controls.Add(Me.KaufenFabrikBobButton)
-        Me.Controls.Add(Me.KostenChormeLabel)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Zählerbox)
         Me.Controls.Add(Me.PictureBox1)
         Me.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Cash-Clicker"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -587,6 +736,10 @@ Partial Class Form1
         CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NachichtPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -596,18 +749,18 @@ Partial Class Form1
     Friend WithEvents Zählerbox As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents BeschreibungFabrik3Label As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents KostenChormeLabel As Label
-    Friend WithEvents KaufenFabrikBobButton As Button
+    Friend WithEvents KostenFabrik3Label As Label
+    Friend WithEvents Fabrik3KaufenButton As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents KaufenBobButton As Button
     Friend WithEvents BobPreisLabel As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents levelFabrik2Label As Label
+    Friend WithEvents Fabrik3LevelLabel As Label
     Friend WithEvents BobLevelLabel As Label
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents PictureBox10 As PictureBox
@@ -621,7 +774,6 @@ Partial Class Form1
     Friend WithEvents KastenFabrik1Label As Label
     Friend WithEvents PictureBox13 As PictureBox
     Friend WithEvents BeschreibungFabrik1Label As Label
-    Friend WithEvents Timer2 As Timer
     Friend WithEvents Fabrik1Button As Button
     Friend WithEvents DrückerKaufenButton As Button
     Friend WithEvents DrückerLevelLabel As Label
@@ -629,13 +781,26 @@ Partial Class Form1
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents DrückerBeschreibungLabel As Label
     Friend WithEvents PictureBox14 As PictureBox
-    Friend WithEvents LevelFabrik3Label As Label
-    Friend WithEvents KaufenFabrik3Button As Button
-    Friend WithEvents KosenFabrik3Label As Label
+    Friend WithEvents Fabrik2LevelLabel As Label
+    Friend WithEvents KaufenFabrik2Button As Button
+    Friend WithEvents KosenFabrik2Label As Label
     Friend WithEvents PictureBox15 As PictureBox
-    Friend WithEvents BeschreibungFabrik3Label As Label
+    Friend WithEvents BeschreibungFabrik2Label As Label
     Friend WithEvents PictureBox16 As PictureBox
     Friend WithEvents PictureBox17 As PictureBox
     Friend WithEvents PictureBox18 As PictureBox
-    Friend WithEvents Timer3 As Timer
+    Friend WithEvents Label3 As Label
+    Friend WithEvents WahrscheinlichkeitKapputBox As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents GeldProSekundebox As TextBox
+    Friend WithEvents PictureBox19 As PictureBox
+    Friend WithEvents PictureBox20 As PictureBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents KostenReperateurLabel As Label
+    Friend WithEvents UpgradeReperateurButton As Button
+    Friend WithEvents LevelReperateurLabel As Label
+    Friend WithEvents PictureBox21 As PictureBox
+    Friend WithEvents NachichtTimer As Timer
+    Friend WithEvents NachichtPictureBox As PictureBox
+    Friend WithEvents SpielNeuStartenButton As Button
 End Class

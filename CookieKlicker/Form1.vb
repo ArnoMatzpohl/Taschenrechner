@@ -1,60 +1,134 @@
 ﻿Public Class Form1
 
-    Private Zähler As Integer = 9999999
-    Private FabrikUpgrade As Integer = 0
-    Dim PreisFabrik As Integer = 1000
-    Dim Money As Integer
-    Dim PreisBob As Integer = 10000
-    Dim BobUpgrade As Integer = 0
-    Dim ZerstörungFabrikWahrscheinlichkeit As Double = 0.00001
-    Dim Preisreparieren As String = 200
-    Dim InsgesamtesGeld As Integer = 0
-    Dim GestopptFabrik As Boolean
-    Dim Drücker As Integer = 1
-    Dim PreisDrücker As Integer = 5
-    Dim PreisFabrik1 As Integer = 100
-    Dim FabrikUpgrade1 As Integer = 0
-    Dim DrückerLevel As Integer = 1
-    Dim Preisfabrik3 As Integer = 500
-    Dim Fabrik3Upgrade As Integer = 0
-    Dim Fabrik3Level As Integer = 0
-    Dim Fabrik3Geld As Integer = 0
 
 
 
+    Function Belohnung1() As Integer
+        If SpielStatus.Instanz.InsgesamtesGeld > 100 Then
+            Nachichtlabel.Text = "Du hast insgesamt über 100$ Verdient, hier ist
+deine Belohnung:
+
+25$ Von John erhalten!"
+            SpielStatus.Instanz.Zähler = SpielStatus.Instanz.Zähler + 25
+            SpielStatus.Instanz.InsgesamtesGeld = SpielStatus.Instanz.InsgesamtesGeld + 25
+
+        ElseIf SpielStatus.Instanz.InsgesamtesGeld > 1000 Then
+            Nachichtlabel.Text = "Du hast insgesamt über 100$ Verdient, hier ist
+deine Belohnung:
+
+100$ Von John erhalten!"
+            SpielStatus.Instanz.Zähler = SpielStatus.Instanz.Zähler + 100
+            SpielStatus.Instanz.InsgesamtesGeld = SpielStatus.Instanz.InsgesamtesGeld + 100
+        ElseIf SpielStatus.Instanz.InsgesamtesGeld > 100000 Then
+            Nachichtlabel.Text = "Du hast insgesamt über 100$ Verdient, hier ist
+deine Belohnung:
+
+15.000$ Von John erhalten!"
+            SpielStatus.Instanz.Zähler = SpielStatus.Instanz.Zähler + 15000
+            SpielStatus.Instanz.InsgesamtesGeld = SpielStatus.Instanz.InsgesamtesGeld + 15000
+        End If
+
+
+
+
+
+    End Function
 
 
     'Erste Fabrik
-    Private Sub Fabrik1Button_Click(sender As Object, e As EventArgs) Handles Fabrik1Button.Click
-
+    Private Sub Fabrik1Button_Click(sender As Object, e As EventArgs) Handles Fabrik1Button.MouseUp
         Fabrik1Button.Text = "Upgrade"
 
-        If Zähler >= PreisFabrik1 Then
-            Zähler = Zähler - PreisFabrik1
-            FabrikUpgrade1 = FabrikUpgrade1 + 1
-            Zählerbox.Text = Zähler
-            PreisFabrik1 = PreisFabrik1 * 1.1
-            KastenFabrik1Label.Text = "- Kosten: " & PreisFabrik1 & "$"
-            BeschreibungFabrik1Label.Text = "- Generiert automatisch " & FabrikUpgrade1 + 1 & "$ pro sek. automatisch!"
-            Fabrik1LevelLabel.Text = "Level: " & FabrikUpgrade1
+        If SpielStatus.Instanz.Zähler >= SpielStatus.Instanz.Fabrik1Preis Then
+            SpielStatus.Instanz.Zähler = SpielStatus.Instanz.Zähler - SpielStatus.Instanz.Fabrik1Preis
+            SpielStatus.Instanz.Fabrik1Upgrade = SpielStatus.Instanz.Fabrik1Upgrade + 1
+            Zählerbox.Text = SpielStatus.Instanz.Zähler
+            SpielStatus.Instanz.Fabrik1Preis = SpielStatus.Instanz.Fabrik1Preis * 1.1
+            KastenFabrik1Label.Text = "- Kosten: " & SpielStatus.Instanz.Fabrik1Preis & "$"
+            BeschreibungFabrik1Label.Text = "- Generiert automatisch " & SpielStatus.Instanz.Fabrik1Upgrade + 1.15 & "$ pro sek. automatisch!"
+            Fabrik1LevelLabel.Text = "Level: " & SpielStatus.Instanz.Fabrik1Upgrade
+            Nachichtlabel.Text = "Glückwunsch!
+Du hast deine Fabrik1 auf ein neues Level
+gebrach!"
+            SpielStatus.Instanz.Counter = 0
+            NachichtTimer.Interval = 500
+            NachichtTimer.Start()
+            NachichtPictureBox.Show()
+            WahrscheinlichkeitKapputBox.Text = Aktuellezerstörungswahrscheinlichkeit() * 100
+            GeldProSekundebox.Text = GeldProSekunde()
         End If
 
     End Sub
 
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub KaufenFabrik2Button_Click(sender As Object, e As EventArgs) Handles KaufenFabrik2Button.MouseUp
 
-
-        If FabrikUpgrade1 > 0 Then 'mindestens ein upgrade
-            Zähler = Zähler + FabrikUpgrade1 * 1
-            InsgesamtesGeld = InsgesamtesGeld + FabrikUpgrade1 * 1 '<-- Das Bringt 1 $ mehr
+        If SpielStatus.Instanz.Fabrik2Preis < SpielStatus.Instanz.Zähler Then
+            SpielStatus.Instanz.Zähler = SpielStatus.Instanz.Zähler - SpielStatus.Instanz.Fabrik2Preis
+            Zählerbox.Text = SpielStatus.Instanz.Zähler
+            SpielStatus.Instanz.Fabrik2Preis = SpielStatus.Instanz.Fabrik2Preis * 1.2
+            SpielStatus.Instanz.Fabrik2Upgrade = SpielStatus.Instanz.Fabrik2Upgrade + 1
+            Fabrik2LevelLabel.Text = "- Level: " & SpielStatus.Instanz.Fabrik2Upgrade
+            BeschreibungFabrik2Label.Text = "- Generiert" & SpielStatus.Instanz.Fabrik2Upgrade * 1.3 & "$ pro sek. automatisch!"
+            KaufenFabrik2Button.Text = "Upgrade"
+            KosenFabrik2Label.Text = "- Kostet: " & SpielStatus.Instanz.Fabrik2Preis & "$"
+            Nachichtlabel.Text = "Glückwunsch!
+Du hast deine Fabrik2 auf ein neues Level
+gebrach!"
+            SpielStatus.Instanz.Counter = 0
+            NachichtTimer.Interval = 500
+            NachichtTimer.Start()
+            NachichtPictureBox.Show()
+            WahrscheinlichkeitKapputBox.Text = Aktuellezerstörungswahrscheinlichkeit() * 100
+            GeldProSekundebox.Text = GeldProSekunde()
         End If
 
-        Zählerbox.Text = Zähler
-        Fabrik1Button.Enabled = PreisFabrik1 <= Zähler
-
-        'reparierenButton.Enabled = BobUpgrade > 0 And Zähler > Preisreparieren And GestopptFabrik = True
-        'KaufenBobButton.Enabled = FabrikUpgrade2 > 0 And Zähler > PreisBob
     End Sub
+
+    Private Sub Fabrik3KaufenButton_Click(sender As Object, e As EventArgs) Handles Fabrik3KaufenButton.MouseUp
+
+        Fabrik3KaufenButton.Text = "Upgrade"
+
+        If SpielStatus.Instanz.Zähler >= SpielStatus.Instanz.Fabrik3Preis Then
+            SpielStatus.Instanz.Zähler = SpielStatus.Instanz.Zähler - SpielStatus.Instanz.Fabrik3Preis
+            SpielStatus.Instanz.Fabrik3Upgrade = SpielStatus.Instanz.Fabrik3Upgrade + 1
+            Zählerbox.Text = SpielStatus.Instanz.Zähler
+            SpielStatus.Instanz.Fabrik3Preis = SpielStatus.Instanz.Fabrik3Preis * 1.3
+            KostenFabrik3Label.Text = "- Kosten: " & SpielStatus.Instanz.Fabrik3Preis & "$"
+            Fabrik3LevelLabel.Text = "Level: " & SpielStatus.Instanz.Fabrik3Upgrade
+            BeschreibungFabrik3Label.Text = "- Generiert automatisch " & SpielStatus.Instanz.Fabrik3Upgrade * 2 & "$"
+            WahrscheinlichkeitKapputBox.Text = Aktuellezerstörungswahrscheinlichkeit() * 100
+            GeldProSekundebox.Text = GeldProSekunde()
+            Nachichtlabel.Text = "Glückwunsch!
+Du hast deine Fabrik3 auf ein neues Level
+gebrach!"
+            SpielStatus.Instanz.Counter = 0
+            NachichtTimer.Interval = 500
+            NachichtTimer.Start()
+            NachichtPictureBox.Show()
+
+        End If
+
+    End Sub
+
+    Private Sub DrückerKaufenButton_Click(sender As Object, e As EventArgs) Handles DrückerKaufenButton.MouseUp
+        If SpielStatus.Instanz.Zähler > SpielStatus.Instanz.DrückerPreis Then
+
+            SpielStatus.Instanz.Zähler = SpielStatus.Instanz.Zähler - SpielStatus.Instanz.DrückerPreis
+            SpielStatus.Instanz.DrückerPreis = SpielStatus.Instanz.DrückerPreis * 1.4
+            DrückerKostenLabel.Text = "- Kostet: " & SpielStatus.Instanz.DrückerPreis & "$"
+            SpielStatus.Instanz.DrückerUpgrade = SpielStatus.Instanz.DrückerUpgrade + 1
+            DrückerLevelLabel.Text = "Level: " & SpielStatus.Instanz.DrückerUpgrade
+            DrückerBeschreibungLabel.Text = "- Baim nächsen Upgrade: " & SpielStatus.Instanz.DrückerUpgrade + 1 & "$ pro Klick"
+
+            Nachichtlabel.Text = "Cursor Upgrade auf Level: " & SpielStatus.Instanz.DrückerUpgrade
+            SpielStatus.Instanz.Counter = 0
+            NachichtTimer.Interval = 500
+            NachichtTimer.Start()
+            NachichtPictureBox.Show()
+        End If
+
+    End Sub
+
 
     'Spezial Fabrik
 
@@ -74,75 +148,104 @@
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.MouseDown
 
-        InsgesamtesGeld = InsgesamtesGeld + Drücker
-        Zähler = Zähler + Drücker
+        Belohnung1()
 
-        Zählerbox.Text = Zähler
+        SpielStatus.Instanz.InsgesamtesGeld = SpielStatus.Instanz.InsgesamtesGeld + SpielStatus.Instanz.DrückerUpgrade
+        SpielStatus.Instanz.Zähler = SpielStatus.Instanz.Zähler + SpielStatus.Instanz.DrückerUpgrade
 
-    End Sub
-
-    Private Sub KaufenFabrikBobButton_Click(sender As Object, e As EventArgs) Handles KaufenFabrikBobButton.Click
-
-        KaufenFabrikBobButton.Text = "Upgrade"
-
-        If Zähler >= PreisFabrik Then
-            Zähler = Zähler - PreisFabrik
-            FabrikUpgrade = FabrikUpgrade + 1
-            Zählerbox.Text = Zähler
-            PreisFabrik = PreisFabrik * 1.3
-            KostenChormeLabel.Text = "- Kosten: " & PreisFabrik & "$"
-            levelFabrik2Label.Text = "Level: " & FabrikUpgrade
-            Label2.Text = "- Generiert automatisch " & FabrikUpgrade * 2 & "$"
-        End If
+        Zählerbox.Text = SpielStatus.Instanz.Zähler
 
     End Sub
+
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
-        If FabrikUpgrade > 0 Then
-            If Rnd() < ZerstörungFabrikWahrscheinlichkeit Then
-                GestopptFabrik = True
+
+        If SpielStatus.Instanz.Fabrik1Upgrade > 0 Or SpielStatus.Instanz.Fabrik2Upgrade > 0 Or SpielStatus.Instanz.Fabrik3Upgrade > 0 Then
+            If Rnd() < Aktuellezerstörungswahrscheinlichkeit() Then
+                SpielStatus.Instanz.GestopptFabrik = True
             End If
         End If
-        If GestopptFabrik = True Then
+
+        If SpielStatus.Instanz.GestopptFabrik = True Then
             Nachichtlabel.Text = "Deine Fabrik ist beschädigt!
 Benutze Bob um die Fabrik zu reparieren."
         Else
-            If FabrikUpgrade > 0 Then 'mindestens ein chrome upgrade
-                Zähler = Zähler + FabrikUpgrade * 2
-                InsgesamtesGeld = InsgesamtesGeld + FabrikUpgrade * 2 '<-- Das Bringt 1 $ mehr
+            If SpielStatus.Instanz.Fabrik3Upgrade > 0 Then 'mindestens ein chrome upgrade
+                SpielStatus.Instanz.Zähler = SpielStatus.Instanz.Zähler + SpielStatus.Instanz.Fabrik3Upgrade * 2
+                SpielStatus.Instanz.InsgesamtesGeld = SpielStatus.Instanz.InsgesamtesGeld + SpielStatus.Instanz.Fabrik3Upgrade * 2 '<-- Das Bringt 1 $ mehr
             End If
         End If
-        Zählerbox.Text = Zähler
-        KaufenFabrikBobButton.Enabled = PreisFabrik <= Zähler
 
-        reparierenButton.Enabled = BobUpgrade > 0 And Zähler > Preisreparieren And GestopptFabrik = True
-        KaufenBobButton.Enabled = FabrikUpgrade > 0 And Zähler > PreisBob
-        KaufenFabrik3Button.Enabled = Zähler > Preisfabrik3
-        DrückerKaufenButton.Enabled = PreisDrücker < Zähler
+
+
+        If SpielStatus.Instanz.GestopptFabrik = True Then
+            Nachichtlabel.Text = "Deine Fabrik ist beschädigt!
+Benutze Bob um die Fabrik zu reparieren."
+        Else
+            If SpielStatus.Instanz.Fabrik2Upgrade > 0 Then 'mindestens ein chrome upgrade
+                SpielStatus.Instanz.Zähler = SpielStatus.Instanz.Zähler + SpielStatus.Instanz.Fabrik2Upgrade * 2
+                SpielStatus.Instanz.InsgesamtesGeld = SpielStatus.Instanz.InsgesamtesGeld + SpielStatus.Instanz.Fabrik2Upgrade * 2 '<-- Das Bringt 1 $ mehr
+            End If
+        End If
+
+
+        If SpielStatus.Instanz.GestopptFabrik = True Then
+            Nachichtlabel.Text = "Deine Fabrik ist beschädigt!
+Benutze Bob um die Fabrik zu reparieren."
+        Else
+            If SpielStatus.Instanz.Fabrik1Upgrade > 0 Then 'mindestens ein chrome upgrade
+                SpielStatus.Instanz.Zähler = SpielStatus.Instanz.Zähler + SpielStatus.Instanz.Fabrik1Upgrade * 2
+                SpielStatus.Instanz.InsgesamtesGeld = SpielStatus.Instanz.InsgesamtesGeld + SpielStatus.Instanz.Fabrik1Upgrade * 2 '<-- Das Bringt 1 $ mehr
+            End If
+        End If
+
+
+        Zählerbox.Text = SpielStatus.Instanz.Zähler
+        Fabrik3KaufenButton.Enabled = SpielStatus.Instanz.Fabrik3Preis <= SpielStatus.Instanz.Zähler
+
+        reparierenButton.Enabled = SpielStatus.Instanz.BobUpgrade > 0 And SpielStatus.Instanz.Zähler > SpielStatus.Instanz.Preisreparieren And SpielStatus.Instanz.GestopptFabrik = True
+
+        KaufenFabrik2Button.Enabled = SpielStatus.Instanz.Fabrik2Preis < SpielStatus.Instanz.Zähler
+        DrückerKaufenButton.Enabled = SpielStatus.Instanz.DrückerPreis < SpielStatus.Instanz.Zähler
+        KaufenBobButton.Enabled = SpielStatus.Instanz.Fabrik3Upgrade > 0 And SpielStatus.Instanz.Zähler > SpielStatus.Instanz.PreisBob Or SpielStatus.Instanz.Fabrik1Upgrade > 0 And SpielStatus.Instanz.Zähler > SpielStatus.Instanz.PreisBob Or SpielStatus.Instanz.Fabrik2Upgrade And SpielStatus.Instanz.Zähler > SpielStatus.Instanz.PreisBob
     End Sub
 
-    Private Sub KaufenBobButton_Click(sender As Object, e As EventArgs) Handles KaufenBobButton.Click
+    Private Sub KaufenBobButton_Click(sender As Object, e As EventArgs) Handles KaufenBobButton.MouseUp
 
 
 
         KaufenBobButton.Hide()
 
-        If Zähler < PreisBob Then
-            MessageBox.Show("Du benötigst: " & PreisBob & "$!")
+        If SpielStatus.Instanz.Zähler < SpielStatus.Instanz.PreisBob Then
+            Nachichtlabel.Text = "Du benötigst: " & SpielStatus.Instanz.PreisBob & "$!"
+            SpielStatus.Instanz.Counter = 0
+            NachichtTimer.Interval = 500
+            NachichtTimer.Start()
+            NachichtPictureBox.Show()
         End If
 
-        If Zähler >= PreisBob Then
-            Zähler = Zähler - PreisBob
-            BobUpgrade = BobUpgrade + 1
-            PreisBob = PreisBob * 1.8
-            BobPreisLabel.Text = "- Kosten: " & PreisBob & "$"
-            BobLevelLabel.Text = "Level: " & BobUpgrade
+        If SpielStatus.Instanz.Zähler >= SpielStatus.Instanz.PreisBob Then
+            SpielStatus.Instanz.Zähler = SpielStatus.Instanz.Zähler - SpielStatus.Instanz.PreisBob
+            SpielStatus.Instanz.BobUpgrade = SpielStatus.Instanz.BobUpgrade + 1
+            SpielStatus.Instanz.Counter = 0
+            NachichtTimer.Interval = 500
+            NachichtTimer.Start()
+            NachichtPictureBox.Show()
+            SpielStatus.Instanz.PreisBob = SpielStatus.Instanz.PreisBob * 1.8
+            BobPreisLabel.Text = "- Kosten: " & SpielStatus.Instanz.PreisBob & "$"
+            BobLevelLabel.Text = "Level: " & SpielStatus.Instanz.BobUpgrade
 
-            KaufenBobButton.Enabled = PreisBob <= Zähler
+            Nachichtlabel.Text = "Bob wurde Gekauft!"
+            SpielStatus.Instanz.Counter = 0
+            NachichtTimer.Interval = 500
+            NachichtTimer.Start()
+            NachichtPictureBox.Show()
+
+            KaufenBobButton.Enabled = SpielStatus.Instanz.PreisBob <= SpielStatus.Instanz.Zähler
 
             If reparierenButton.Enabled Then
-                GestopptFabrik = False
+                SpielStatus.Instanz.GestopptFabrik = False
             End If
 
         End If
@@ -150,40 +253,87 @@ Benutze Bob um die Fabrik zu reparieren."
     End Sub
 
     Private Sub reparierenButton_Click(sender As Object, e As EventArgs) Handles reparierenButton.Click
-        GestopptFabrik = False
+        SpielStatus.Instanz.GestopptFabrik = False
         Nachichtlabel.Text = "Die Fabrik wurde von Bob Repariert."
+        SpielStatus.Instanz.Counter = 0
+        NachichtTimer.Interval = 500
+        NachichtTimer.Start()
+        NachichtPictureBox.Show()
     End Sub
 
-    Private Sub DrückerKaufenButton_Click(sender As Object, e As EventArgs) Handles DrückerKaufenButton.Click
+    Function GeldProSekunde() As Integer
+        Dim GeldProSekundeInsgesamt As Integer
 
 
+        GeldProSekundeInsgesamt = GeldProSekundeInsgesamt + SpielStatus.Instanz.Fabrik1Upgrade + 1.15
+        GeldProSekundeInsgesamt = GeldProSekundeInsgesamt + SpielStatus.Instanz.Fabrik2Upgrade * 1.3
+        GeldProSekundeInsgesamt = GeldProSekundeInsgesamt + SpielStatus.Instanz.Fabrik3Upgrade * 2
 
-        If Zähler > PreisDrücker Then
+        Return GeldProSekundeInsgesamt + 1
+    End Function
 
-            Zähler = Zähler - PreisDrücker
-            Drücker = Drücker + 1
-            PreisDrücker = PreisDrücker * 1.4
-            DrückerKostenLabel.Text = "- Kostet: " & PreisDrücker & "$"
-            DrückerLevel = DrückerLevel + 1
-            DrückerLevelLabel.Text = "Level: " & DrückerLevel
-            DrückerBeschreibungLabel.Text = "- Baim nächsen Upgrade: " & DrückerLevel + 1 & "$ pro Klick"
+    Function Aktuellezerstörungswahrscheinlichkeit() As Double
+        Dim Rückgabe As Double = SpielStatus.Instanz.ZerstörungFabrikWahrscheinlichkeit
+
+        Rückgabe = Rückgabe + SpielStatus.Instanz.Fabrik1Upgrade * 0.01
+        Rückgabe = Rückgabe + SpielStatus.Instanz.Fabrik2Upgrade * 0.03
+        Rückgabe = Rückgabe + SpielStatus.Instanz.Fabrik3Upgrade * 0.06
+
+        If Rückgabe > 0.8 Then
+            Rückgabe = 0.8
+        End If
+
+        '0.01
+        '0.03
+        '0.06
+
+        Rückgabe = Rückgabe - SpielStatus.Instanz.ReperateurAbzug
+
+        Return Rückgabe
+    End Function
+
+    Private Sub UpgradeReperateurButton_Click(sender As Object, e As EventArgs) Handles UpgradeReperateurButton.Click
+
+        If SpielStatus.Instanz.ReperateurPreis < SpielStatus.Instanz.Zähler Then
+            SpielStatus.Instanz.ReperateurUpgrades = SpielStatus.Instanz.ReperateurUpgrades + 1
+            SpielStatus.Instanz.Zähler = SpielStatus.Instanz.Zähler - SpielStatus.Instanz.ReperateurPreis
+            SpielStatus.Instanz.ReperateurAbzug = SpielStatus.Instanz.ReperateurAbzug + 0.1
+            SpielStatus.Instanz.ReperateurPreis = SpielStatus.Instanz.ReperateurPreis * 0.05
+            WahrscheinlichkeitKapputBox.Text = Aktuellezerstörungswahrscheinlichkeit() * 100
+            KostenReperateurLabel.Text = "- Kostet: " & SpielStatus.Instanz.ReperateurPreis & "$"
+
         End If
 
     End Sub
 
-    Private Sub KaufenFabrik3Button_Click(sender As Object, e As EventArgs) Handles KaufenFabrik3Button.Click
+    Private Sub NachichtTimer_Tick(sender As Object, e As EventArgs) Handles NachichtTimer.Tick
 
-        If KaufenFabrik3Button.Enabled Then
-            Zähler = Zähler - Preisfabrik3
-            Zählerbox.Text = Zähler
-            Preisfabrik3 = Preisfabrik3 * 1.2
-            Fabrik3Upgrade = Fabrik3Upgrade + 1
-            Fabrik3Level = Fabrik3Level + 1
-            LevelFabrik3Label.Text = "- Level: " & Fabrik3Level
-            Fabrik3Geld = Fabrik3Level * 1.3
-            KosenFabrik3Label.Text = "- Generiert" & Fabrik3Geld & "$ pro sek. automatisch!"
-            KaufenFabrik3Button.Text = "Upgrade"
+
+        NachichtPictureBox.Visible = Not NachichtPictureBox.Visible
+
+
+        SpielStatus.Instanz.Counter += 1
+
+        If SpielStatus.Instanz.Counter > 3 Then
+            NachichtTimer.Stop()
+            'NachichtPictureBox.Hide()
         End If
 
+
+
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        NachichtPictureBox.Hide()
+
+        SpielStatus.Laden()
+    End Sub
+
+    Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        SpielStatus.Speichern()
+    End Sub
+
+    Private Sub SpielNeuStartenButton_Click(sender As Object, e As EventArgs) Handles SpielNeuStartenButton.Click
+        SpielStatus.NeuAnfangen()
     End Sub
 End Class
